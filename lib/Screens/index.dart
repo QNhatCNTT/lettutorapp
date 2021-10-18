@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Login/login_ui.dart';
+import 'Register/register_ui.dart';
 import 'Welcome/welcome.dart';
 
 class AuthenScreens extends StatefulWidget {
@@ -15,7 +16,8 @@ class _AuthenScreensState extends State<AuthenScreens> {
   Widget build(BuildContext context) {
     return const Scaffold(
       //body: WelcomeScreen(),
-      body: LoginScreen(),
+      //body: LoginScreen(),
+      body: RegisterScreen(),
     );
   }
 }

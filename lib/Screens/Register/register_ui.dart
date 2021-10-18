@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lettutorapp/Components/backgroundimage.dart';
 import 'package:lettutorapp/Components/button.dart';
 import 'package:lettutorapp/Components/input.dart';
 import 'package:lettutorapp/Components/loginwith.dart';
-import 'package:lettutorapp/Components/textbutton.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,47 +12,44 @@ class LoginScreen extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.only(
-          top: 50,
+          top: 70,
           right: 20,
           left: 20,
         ),
         child: Column(
-          children: [
-            Container(
-              height: 300,
-              width: 300,
-              padding: const EdgeInsets.only(
-                bottom: 10,
-              ),
-              child: const Background(imageURL: 'assets/images/logo.png'),
+          children: const [
+            CustomInput(
+              iconUrl: 'assets/images/icon_name.png',
+              hint: 'Username',
             ),
-            const CustomInput(
+            CustomInput(
               iconUrl: 'assets/images/icon_email.png',
               hint: 'Email',
             ),
-            const CustomInput(
+            CustomInput(
               iconUrl: 'assets/images/icon_password.png',
               hint: 'Password',
               obsureText: true,
             ),
-            const CustomTextButton(
-              title: 'Forgot password?',
-              alignment: Alignment.centerRight,
+            CustomInput(
+              iconUrl: 'assets/images/icon_password.png',
+              hint: 'Confirm password',
+              obsureText: true,
             ),
-            const CustomButton(
-                title: 'Sign in',
+            CustomButton(
+                title: 'Register',
                 margin: EdgeInsets.only(
-                  top: 20,
+                  top: 50,
                 )),
-            const Divider(
+            Divider(
               height: 30,
               indent: 30,
               endIndent: 30,
               thickness: 2,
             ),
-            const LoginWith(
-              text: 'Don\'t have an account?',
-              title: 'Sign up',
+            LoginWith(
+              text: 'Already have an account?',
+              title: 'Log in',
             ),
           ],
         ),
