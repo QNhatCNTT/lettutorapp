@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
-  final bool obsureText;
+
   final EdgeInsets margin;
-  const CustomButton(
-      {Key? key,
-      this.title = '',
-      this.margin = EdgeInsets.zero,
-      this.obsureText = false})
-      : super(key: key);
+  const CustomButton({
+    Key? key,
+    this.title = '',
+    this.margin = EdgeInsets.zero,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +19,11 @@ class CustomButton extends StatelessWidget {
       child: TextButton(
         onPressed: () {},
         style: TextButton.styleFrom(
-          backgroundColor: Colors.amberAccent,
+          backgroundColor: Colors.tealAccent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
             side: const BorderSide(
-              color: Colors.amberAccent,
+              color: Colors.tealAccent,
             ),
           ),
         ),
@@ -36,6 +35,7 @@ class CustomButton extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
+                color: Colors.black,
               ),
             ),
           ],

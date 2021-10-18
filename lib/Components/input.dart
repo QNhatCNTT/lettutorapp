@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 class CustomInput extends StatelessWidget {
   final String iconUrl;
   final String hint;
-  const CustomInput({Key? key, this.iconUrl = '', this.hint = ''})
-      : super(key: key);
+  final bool obsureText;
+  const CustomInput({
+    Key? key,
+    this.iconUrl = '',
+    this.hint = '',
+    this.obsureText = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
