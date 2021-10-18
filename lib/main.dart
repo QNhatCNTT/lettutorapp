@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lettutorapp/Screens/index.dart';
+
+import 'Screens/AccountManager/index.dart';
+import 'Screens/Authen/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AuthenScreens(),
+      home: AccountManagerScreen(),
     );
   }
 }

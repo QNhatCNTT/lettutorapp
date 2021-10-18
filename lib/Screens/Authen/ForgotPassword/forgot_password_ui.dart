@@ -40,9 +40,10 @@ class ForgotPasswordScreen extends StatelessWidget {
               iconUrl: 'assets/images/icon_email.png',
               hint: 'Email',
             ),
-            const CustomButton(
+            CustomButton(
               title: 'Reset password',
-              margin: EdgeInsets.only(
+              onPressed: () {},
+              margin: const EdgeInsets.only(
                 top: 40,
                 bottom: 40,
               ),

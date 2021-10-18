@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
-
   final EdgeInsets margin;
+  final VoidCallback onPressed;
   const CustomButton({
     Key? key,
     this.title = '',
     this.margin = EdgeInsets.zero,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -17,7 +18,7 @@ class CustomButton extends StatelessWidget {
       width: double.infinity,
       margin: margin,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: TextButton.styleFrom(
           backgroundColor: Colors.tealAccent,
           shape: RoundedRectangleBorder(

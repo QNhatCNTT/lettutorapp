@@ -4,10 +4,12 @@ import 'package:lettutorapp/Components/textbutton.dart';
 class LoginWith extends StatelessWidget {
   final String text;
   final String title;
+  final VoidCallback onPressed;
   const LoginWith({
     Key? key,
     this.text = '',
     this.title = '',
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -68,6 +70,7 @@ class LoginWith extends StatelessWidget {
                     )),
                 CustomTextButton(
                   title: title,
+                  onPressed: onPressed,
                 ),
               ],
             ),

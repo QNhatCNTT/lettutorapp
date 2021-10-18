@@ -17,31 +17,32 @@ class RegisterScreen extends StatelessWidget {
           left: 20,
         ),
         child: Column(
-          children: const [
-            CustomInput(
+          children: [
+            const CustomInput(
               iconUrl: 'assets/images/icon_name.png',
               hint: 'Username',
             ),
-            CustomInput(
+            const CustomInput(
               iconUrl: 'assets/images/icon_email.png',
               hint: 'Email',
             ),
-            CustomInput(
+            const CustomInput(
               iconUrl: 'assets/images/icon_password.png',
               hint: 'Password',
               obsureText: true,
             ),
-            CustomInput(
+            const CustomInput(
               iconUrl: 'assets/images/icon_password.png',
               hint: 'Confirm password',
               obsureText: true,
             ),
             CustomButton(
                 title: 'Register',
-                margin: EdgeInsets.only(
+                onPressed: () {},
+                margin: const EdgeInsets.only(
                   top: 50,
                 )),
-            Divider(
+            const Divider(
               height: 30,
               indent: 30,
               endIndent: 30,
@@ -50,6 +51,7 @@ class RegisterScreen extends StatelessWidget {
             LoginWith(
               text: 'Already have an account?',
               title: 'Log in',
+              onPressed: () {},
             ),
           ],
         ),

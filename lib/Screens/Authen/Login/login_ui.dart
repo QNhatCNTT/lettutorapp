@@ -37,13 +37,15 @@ class LoginScreen extends StatelessWidget {
               hint: 'Password',
               obsureText: true,
             ),
-            const CustomTextButton(
+            CustomTextButton(
               title: 'Forgot password?',
               alignment: Alignment.centerRight,
+              onPressed: () {},
             ),
-            const CustomButton(
+            CustomButton(
                 title: 'Sign in',
-                margin: EdgeInsets.only(
+                onPressed: () {},
+                margin: const EdgeInsets.only(
                   top: 20,
                 )),
             const Divider(
@@ -52,9 +54,10 @@ class LoginScreen extends StatelessWidget {
               endIndent: 30,
               thickness: 2,
             ),
-            const LoginWith(
+            LoginWith(
               text: 'Don\'t have an account?',
               title: 'Sign up',
+              onPressed: () {},
             ),
           ],
         ),
