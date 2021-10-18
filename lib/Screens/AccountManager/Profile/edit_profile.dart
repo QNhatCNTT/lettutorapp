@@ -18,6 +18,7 @@ class EditProfile extends StatelessWidget {
         Avatar(
           imagePath: user.imagePath,
           icon: const Icon(Icons.add_a_photo),
+          onPressed: () {},
         ),
         CustomTextField(
           label: 'User Name',

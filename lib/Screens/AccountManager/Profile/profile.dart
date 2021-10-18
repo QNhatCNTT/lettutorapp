@@ -16,7 +16,7 @@ class Profile extends StatelessWidget {
         Avatar(
           imagePath: user.imagePath,
           icon: const Icon(Icons.edit),
-          // onClicked: () {},
+          onPressed: () {},
         ),
         const SizedBox(
           height: 20,

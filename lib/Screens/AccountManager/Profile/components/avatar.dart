@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class Avatar extends StatelessWidget {
   final String imagePath;
   final Icon icon;
-  // final VoidCallback onClicked;
+  final VoidCallback onPressed;
   const Avatar({
     Key? key,
     required this.imagePath,
     required this.icon,
-    // required this.onClicked,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -57,7 +57,7 @@ class Avatar extends StatelessWidget {
             icon: icon,
             color: Colors.white,
             iconSize: 20,
-            onPressed: () {},
+            onPressed: onPressed,
           ),
         ),
       );
