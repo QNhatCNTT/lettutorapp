@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'ForgotPassword/forgot_password_ui.dart';
 import 'Login/login_ui.dart';
 import 'Register/register_ui.dart';
 import 'Welcome/welcome.dart';
@@ -17,7 +18,8 @@ class _AuthenScreensState extends State<AuthenScreens> {
     return const Scaffold(
       //body: WelcomeScreen(),
       //body: LoginScreen(),
-      body: RegisterScreen(),
+      // body: RegisterScreen(),
+      body: ForgotPasswordScreen(),
     );
   }
 }
