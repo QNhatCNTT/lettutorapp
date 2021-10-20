@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Components/navigation_bar.dart';
 import 'package:lettutorapp/utils/user_info.dart';
 
-import 'Page/home_page.dart';
+import 'home_page.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,7 +13,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   static const user = UserInfo.myUser;
-  void _ontap(currentIndex) {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,34 +44,7 @@ class _HomeState extends State<Home> {
         ],
       ),
       body: const HomePage(),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.home),
-          ),
-          BottomNavigationBarItem(
-            label: 'Message',
-            icon: Icon(Icons.message_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: 'Upcoming',
-            icon: Icon(Icons.history),
-          ),
-          BottomNavigationBarItem(
-            label: 'Tutors',
-            icon: Icon(Icons.groups),
-          ),
-          BottomNavigationBarItem(
-            label: 'Setting',
-            icon: Icon(Icons.settings),
-          ),
-        ],
-        selectedItemColor: Colors.blue[400],
-        unselectedItemColor: Colors.black38,
-        onTap: _ontap,
-      ),
+      bottomNavigationBar: const NaviBotBar(),
     );
   }
 }

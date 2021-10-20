@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Components/list_info_string.dart';
+import 'package:lettutorapp/Screens/Pages/Home/components/tag.dart';
 import 'package:lettutorapp/modles/user.dart';
 import 'package:lettutorapp/utils/user_info.dart';
 import 'components/avatar.dart';
@@ -47,13 +48,8 @@ class Profile extends StatelessWidget {
               SizedBox(
                 width: 5,
               ),
-              Text(
-                'English, Toeic, KET',
-                overflow: TextOverflow.clip,
-                style: TextStyle(
-                  fontSize: 18,
-                ),
-              ),
+              Tag(text: 'English', size: 18),
+              Tag(text: 'TOEIC', size: 18),
             ],
           ),
         ),

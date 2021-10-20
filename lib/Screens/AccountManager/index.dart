@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'Setting/setting.dart';
+import 'Profile/edit_profile.dart';
+// import 'Profile/profile.dart';
+// import 'Setting/setting.dart';
 
 class AccountManagerScreen extends StatefulWidget {
   const AccountManagerScreen({Key? key}) : super(key: key);
@@ -21,8 +23,8 @@ class _AccountManagerScreenState extends State<AccountManagerScreen> {
         elevation: 0,
       ),
       // body: const Profile(),
-      // body: const EditProfile(),
-      body: const SettingScreen(),
+      body: const EditProfile(),
+      // body: const SettingScreen(),
     );
   }
 }

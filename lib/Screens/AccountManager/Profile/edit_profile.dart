@@ -23,37 +23,37 @@ class EditProfile extends StatelessWidget {
         CustomTextField(
           label: 'User Name',
           text: user.userName,
-          onChanged: (userName) {},
+          onChanged: (text) {},
         ),
         CustomTextField(
           label: 'Email',
           text: user.email,
-          onChanged: (email) {},
+          onChanged: (text) {},
         ),
         CustomTextField(
           label: 'Birth Of Day',
           text: user.birthdate,
-          onChanged: (birthdate) {},
+          onChanged: (text) {},
         ),
         CustomTextField(
           label: 'Phone Number',
           text: user.phoneNumber,
-          onChanged: (phoneNumber) {},
+          onChanged: (text) {},
         ),
         CustomTextField(
           label: 'Country',
           text: user.country,
-          onChanged: (country) {},
+          onChanged: (text) {},
         ),
         CustomTextField(
           label: 'Level',
           text: user.myLevel,
-          onChanged: (myLevel) {},
+          onChanged: (text) {},
         ),
         CustomTextField(
           label: 'Want To Learn',
-          text: user.wantToLearn.toString(),
-          onChanged: (wantToLearn) {},
+          text: 'English, TOEIC',
+          onChanged: (text) {},
         ),
         const SizedBox(
           height: 30,
@@ -61,6 +61,7 @@ class EditProfile extends StatelessWidget {
         CustomButton(
           title: 'Save',
           margin: const EdgeInsets.only(bottom: 30),
+          height: 50,
           onPressed: () {},
         ),
       ],

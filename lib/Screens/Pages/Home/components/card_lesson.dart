@@ -48,7 +48,7 @@ class CardLesson extends StatelessWidget {
                                       'Keegan',
                                       style: TextStyle(
                                         fontSize: 20,
-                                        fontWeight: FontWeight.bold,
+                                        fontWeight: FontWeight.w500,
                                       ),
                                     ),
                                   ),
@@ -97,12 +97,20 @@ class CardLesson extends StatelessWidget {
                               ),
                               Container(
                                 padding: const EdgeInsets.all(0),
-                                child: Row(
-                                  children: const [
-                                    Tag(text: 'English'),
-                                    Tag(text: 'English for kid'),
-                                    Tag(text: 'TOEIC'),
-                                  ],
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    children: const [
+                                      Tag(text: 'English'),
+                                      Tag(text: 'English for kid'),
+                                      Tag(text: 'TOEIC'),
+                                      Tag(text: 'TOEFL'),
+                                      Tag(text: 'English for bussiness'),
+                                      Tag(text: 'tagalog'),
+                                      Tag(text: 'KID'),
+                                      Tag(text: 'Korea'),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],

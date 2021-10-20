@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'Screens/Home/index.dart';
+// import 'Screens/Pages/Home/index.dart';
+import 'Screens/Pages/Tutors/index.dart';
+// import 'Screens/AccountManager/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const Home(),
+      home: const Tutors(),
     );
   }
 }
