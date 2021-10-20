@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'Profile/edit_profile.dart';
-import 'Profile/profile.dart';
 import 'Setting/setting.dart';
 
 class AccountManagerScreen extends StatefulWidget {

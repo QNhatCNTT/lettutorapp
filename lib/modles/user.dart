@@ -1,8 +1,3 @@
-import 'dart:ffi';
-
-import 'package:intl/date_symbol_data_local.dart';
-import 'package:intl/intl.dart';
-
 class User {
   final String imagePath;
   final String userName;
