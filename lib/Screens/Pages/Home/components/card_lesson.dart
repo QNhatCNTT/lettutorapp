@@ -60,7 +60,7 @@ class _CardLessonState extends State<CardLesson> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   const Expanded(
-                                    flex: 4,
+                                    flex: 3,
                                     child: Text(
                                       'Keegan',
                                       style: TextStyle(
@@ -71,19 +71,25 @@ class _CardLessonState extends State<CardLesson> {
                                   ),
                                   Expanded(
                                     flex: 1,
-                                    child: IconButton(
-                                      onPressed: _toggleFavorite,
-                                      color: Colors.red[500],
-                                      icon: (_isFavorited
-                                          ? Icon(Icons.favorite,
-                                              color: Colors.red[500])
-                                          : const Icon(Icons.favorite_border)),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        IconButton(
+                                          onPressed: _toggleFavorite,
+                                          color: Colors.red[500],
+                                          icon: (_isFavorited
+                                              ? Icon(Icons.favorite,
+                                                  color: Colors.red[500])
+                                              : const Icon(
+                                                  Icons.favorite_border)),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
                               ),
                               Container(
-                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                                padding: const EdgeInsets.all(0),
                                 child: Row(
                                   children: const [
                                     Icon(
