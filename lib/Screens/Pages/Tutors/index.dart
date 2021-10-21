@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Components/filtter_chip.dart';
 import 'package:lettutorapp/Components/navigation_bar.dart';
 import 'tutors_page.dart';
 
@@ -74,72 +75,41 @@ class _TutorsState extends State<Tutors> {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: const [
-                          ChoiceChip(
-                            label: Text('All'),
-                            selected: true,
-                          ),
+                          FilterTag(chipName: 'English for Kids'),
                           SizedBox(
-                            width: 7,
+                            width: 5,
                           ),
-                          ChoiceChip(
-                            label: Text('English'),
-                            selected: false,
-                          ),
+                          FilterTag(chipName: 'Business English'),
                           SizedBox(
-                            width: 7,
+                            width: 5,
                           ),
-                          ChoiceChip(
-                            label: Text('TOEIC'),
-                            selected: false,
-                          ),
+                          FilterTag(chipName: 'Conversational English'),
                           SizedBox(
-                            width: 7,
+                            width: 5,
                           ),
-                          ChoiceChip(
-                            label: Text('TOEFL'),
-                            selected: false,
-                          ),
+                          FilterTag(chipName: 'STARTERS'),
                           SizedBox(
-                            width: 7,
+                            width: 5,
                           ),
-                          ChoiceChip(
-                            label: Text('IELTS'),
-                            selected: false,
-                          ),
+                          FilterTag(chipName: 'MOVERS'),
                           SizedBox(
-                            width: 7,
+                            width: 5,
                           ),
-                          ChoiceChip(
-                            label: Text('TOEIC'),
-                            selected: false,
-                          ),
+                          FilterTag(chipName: 'FLYERS'),
                           SizedBox(
-                            width: 7,
+                            width: 5,
                           ),
-                          ChoiceChip(
-                            label: Text('TOEIC'),
-                            selected: false,
-                          ),
+                          FilterTag(chipName: 'TOEIC'),
                           SizedBox(
-                            width: 7,
+                            width: 5,
                           ),
-                          ChoiceChip(
-                            label: Text('TOEIC'),
-                            selected: false,
-                          ),
+                          FilterTag(chipName: 'TOEFL'),
                           SizedBox(
-                            width: 7,
+                            width: 5,
                           ),
-                          ChoiceChip(
-                            label: Text('TOEIC'),
-                            selected: false,
-                          ),
+                          FilterTag(chipName: 'IELTS'),
                           SizedBox(
-                            width: 7,
-                          ),
-                          ChoiceChip(
-                            label: Text('TOEIC'),
-                            selected: false,
+                            width: 5,
                           ),
                         ],
                       ),

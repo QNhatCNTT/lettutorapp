@@ -1,4 +1,4 @@
-import 'package:lettutorapp/modles/user.dart';
+import 'package:lettutorapp/Modles/user.dart';
 
 class UserInfo {
   static const myUser = User(

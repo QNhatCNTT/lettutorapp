@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Components/list_info_string.dart';
 import 'package:lettutorapp/Screens/Pages/Home/components/tag.dart';
-import 'package:lettutorapp/modles/user.dart';
-import 'package:lettutorapp/utils/user_info.dart';
+import 'package:lettutorapp/Modles/user.dart';
+import 'package:lettutorapp/Utils/user_info.dart';
 import 'components/avatar.dart';
 
 class Profile extends StatelessWidget {

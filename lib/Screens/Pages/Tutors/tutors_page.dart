@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'components/card_tutor.dart';
 
 class TutorsPage extends StatelessWidget {

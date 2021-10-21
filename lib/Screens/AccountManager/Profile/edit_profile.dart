@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Components/button.dart';
 import 'package:lettutorapp/Components/textfield.dart';
-import 'package:lettutorapp/utils/user_info.dart';
+import 'package:lettutorapp/Utils/user_info.dart';
 
 import 'components/avatar.dart';
 

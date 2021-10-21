@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:lettutorapp/Components/favorite_icon.dart';
+import 'package:lettutorapp/Components/star.dart';
 import 'tag.dart';
 
 class CardLesson extends StatefulWidget {
@@ -10,17 +11,6 @@ class CardLesson extends StatefulWidget {
 }
 
 class _CardLessonState extends State<CardLesson> {
-  bool _isFavorited = false;
-  void _toggleFavorite() {
-    setState(() {
-      if (_isFavorited) {
-        _isFavorited = false;
-      } else {
-        _isFavorited = true;
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -73,53 +63,14 @@ class _CardLessonState extends State<CardLesson> {
                                     flex: 1,
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        IconButton(
-                                          onPressed: _toggleFavorite,
-                                          color: Colors.red[500],
-                                          icon: (_isFavorited
-                                              ? Icon(Icons.favorite,
-                                                  color: Colors.red[500])
-                                              : const Icon(
-                                                  Icons.favorite_border)),
-                                        ),
+                                      children: const [
+                                        FavoriteVote(),
                                       ],
                                     ),
                                   ),
                                 ],
                               ),
-                              Container(
-                                padding: const EdgeInsets.all(0),
-                                child: Row(
-                                  children: const [
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 20,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 20,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 20,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 20,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 20,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              const StarVote(),
                               const SizedBox(
                                 height: 5,
                               ),

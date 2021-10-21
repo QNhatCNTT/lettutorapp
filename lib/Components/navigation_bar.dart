@@ -10,24 +10,24 @@ class NaviBotBar extends StatelessWidget {
       currentIndex: 0,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          label: 'Home',
           icon: Icon(Icons.home),
+          label: 'Home',
         ),
         BottomNavigationBarItem(
-          label: 'Message',
           icon: Icon(Icons.message_outlined),
+          label: 'Message',
         ),
         BottomNavigationBarItem(
-          label: 'Upcoming',
           icon: Icon(Icons.history),
+          label: 'Upcoming',
         ),
         BottomNavigationBarItem(
-          label: 'Tutors',
           icon: Icon(Icons.groups),
+          label: 'Tutors',
         ),
         BottomNavigationBarItem(
-          label: 'Setting',
           icon: Icon(Icons.settings),
+          label: 'Setting',
         ),
       ],
       selectedItemColor: Colors.blue[400],
