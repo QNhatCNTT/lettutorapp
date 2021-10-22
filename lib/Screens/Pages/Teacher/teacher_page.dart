@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Screens/Pages/Teacher/components/info_courses.dart';
+import 'components/feedback.dart';
 import 'components/info_teacher.dart';
 import 'components/intro_teacher.dart';
 
@@ -127,6 +129,8 @@ class _TeacherPageState extends State<TeacherPage> {
             ),
           ),
           const InfoTeacher(),
+          const InfoCourses(),
+          const Feedbacks(),
         ],
       ),
     );
