@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: const HomePage(),
+      body: const SafeArea(child: HomePage()),
       bottomNavigationBar: const NaviBotBar(),
     );
   }

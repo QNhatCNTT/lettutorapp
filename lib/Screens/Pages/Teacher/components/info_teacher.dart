@@ -29,7 +29,10 @@ class _InfoTeacherState extends State<InfoTeacher> {
                   children: const [
                     Text(
                       'Languages',
-                      style: TextStyle(color: Colors.blue, fontSize: 18),
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -57,7 +60,10 @@ class _InfoTeacherState extends State<InfoTeacher> {
                   children: const [
                     Text(
                       'Specialties',
-                      style: TextStyle(color: Colors.blue, fontSize: 18),
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -85,7 +91,10 @@ class _InfoTeacherState extends State<InfoTeacher> {
                   children: const [
                     Text(
                       'Interests',
-                      style: TextStyle(color: Colors.blue, fontSize: 18),
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -108,7 +117,10 @@ class _InfoTeacherState extends State<InfoTeacher> {
                   children: const [
                     Text(
                       'Interests',
-                      style: TextStyle(color: Colors.blue, fontSize: 18),
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

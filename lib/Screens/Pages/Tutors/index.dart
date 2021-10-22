@@ -15,7 +15,7 @@ class _TutorsState extends State<Tutors> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(170.0),
+        preferredSize: const Size.fromHeight(180),
         child: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
@@ -31,7 +31,7 @@ class _TutorsState extends State<Tutors> {
               ),
             ),
             flexibleSpace: Container(
-              padding: const EdgeInsets.fromLTRB(15, 90, 15, 10),
+              padding: const EdgeInsets.fromLTRB(15, 40, 15, 10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -119,7 +119,7 @@ class _TutorsState extends State<Tutors> {
               ),
             )),
       ),
-      body: const TutorsPage(),
+      body: const SafeArea(child: TutorsPage()),
       bottomNavigationBar: const NaviBotBar(),
     );
   }

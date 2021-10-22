@@ -20,7 +20,10 @@ class _InfoCoursesState extends State<InfoCourses> {
             children: const [
               Text(
                 'Courses',
-                style: TextStyle(color: Colors.blue, fontSize: 18),
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
             ],
           ),

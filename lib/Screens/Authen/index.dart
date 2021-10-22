@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'Register/register_ui.dart';
+
+import 'ForgotPassword/forgot_password_ui.dart';
+
+// import 'Login/login_ui.dart';
+// import 'Register/register_ui.dart';
 
 class AuthenScreens extends StatefulWidget {
   const AuthenScreens({Key? key}) : super(key: key);
@@ -20,10 +24,7 @@ class _AuthenScreensState extends State<AuthenScreens> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      // body: WelcomeScreen(),
-      // body: LoginScreen(),
-      body: const RegisterScreen(),
-      // body: ForgotPasswordScreen(),
+      body: const SafeArea(child: ForgotPasswordScreen()),
     );
   }
 }

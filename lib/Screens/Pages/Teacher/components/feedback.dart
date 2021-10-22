@@ -21,7 +21,10 @@ class _FeedbacksState extends State<Feedbacks> {
             children: const [
               Text(
                 'Rating and Comment (3)',
-                style: TextStyle(color: Colors.blue, fontSize: 18),
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
             ],
           ),

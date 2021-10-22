@@ -15,7 +15,7 @@ class _TeacherPageState extends State<TeacherPage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 5),
       child: Column(
         children: [
           Container(
@@ -93,7 +93,6 @@ class _TeacherPageState extends State<TeacherPage> {
                               maxLength: 100,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
-                                labelText: 'Content',
                               ),
                             ),
                           ),

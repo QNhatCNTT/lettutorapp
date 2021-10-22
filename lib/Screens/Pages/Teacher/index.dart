@@ -12,7 +12,7 @@ class _TeacherState extends State<Teacher> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: TeacherPage(),
+      body: SafeArea(child: TeacherPage()),
     );
   }
 }

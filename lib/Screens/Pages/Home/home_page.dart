@@ -77,7 +77,7 @@ class HomePage extends StatelessWidget {
           const CardLesson(),
           const CardLesson(),
           const SizedBox(
-            height: 30,
+            height: 15,
           ),
         ],
       ),

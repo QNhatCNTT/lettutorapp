@@ -8,7 +8,7 @@ class TutorsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: const EdgeInsets.fromLTRB(15, 5, 15, 30),
+        padding: const EdgeInsets.fromLTRB(15, 5, 15, 20),
         child: Column(
           children: [
             SingleChildScrollView(

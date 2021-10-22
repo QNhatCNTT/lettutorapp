@@ -12,7 +12,7 @@ class RegisterScreen extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.only(
-          top: 70,
+          top: 30,
           right: 20,
           left: 20,
         ),
