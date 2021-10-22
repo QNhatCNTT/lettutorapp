@@ -8,8 +8,8 @@ class ForgotPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
+    return ListView(children: [
+      Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.only(
           top: 20,
@@ -51,6 +51,6 @@ class ForgotPasswordScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ]);
   }
 }

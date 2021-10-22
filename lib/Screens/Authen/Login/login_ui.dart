@@ -10,8 +10,8 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
+    return ListView(children: [
+      Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.only(
           top: 10,
@@ -62,6 +62,6 @@ class LoginScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ]);
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Screens/Pages/Courses/index.dart';
+// import 'Screens/Pages/Courses/index.dart';
 // import 'Screens/Pages/Home/index.dart';
 // import 'Screens/Pages/Teacher/index.dart';
-// import 'Screens/Pages/Tutors/index.dart';
+import 'Screens/Pages/Tutors/index.dart';
 // import 'Screens/AccountManager/index.dart';
 // import 'Screens/Authen/index.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const Courses(),
+      home: const Tutors(),
     );
   }
 }

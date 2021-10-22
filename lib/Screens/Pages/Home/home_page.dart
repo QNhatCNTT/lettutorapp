@@ -7,8 +7,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
+    return ListView(children: [
+      Column(
         mainAxisSize: MainAxisSize.max,
         children: [
           const LessonIntro(),
@@ -81,6 +81,6 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ]);
   }
 }
