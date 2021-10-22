@@ -13,8 +13,30 @@ class _FavoriteVoteState extends State<FavoriteVote> {
     setState(() {
       if (_isFavorited) {
         _isFavorited = false;
+        showDialog(
+            context: context,
+            builder: (context) {
+              Future.delayed(const Duration(milliseconds: 500), () {
+                Navigator.of(context).pop(true);
+              });
+              return const AlertDialog(
+                title: Text('Unfavorite successfully',
+                    style: TextStyle(color: Colors.green)),
+              );
+            });
       } else {
         _isFavorited = true;
+        showDialog(
+            context: context,
+            builder: (context) {
+              Future.delayed(const Duration(milliseconds: 500), () {
+                Navigator.of(context).pop(true);
+              });
+              return const AlertDialog(
+                title: Text('Favorite successfully',
+                    style: TextStyle(color: Colors.green)),
+              );
+            });
       }
     });
   }
