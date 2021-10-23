@@ -24,7 +24,7 @@ class _TutorsState extends State<Tutors> {
               child: const Text(
                 'Tutors',
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 20,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
