@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Screens/Authen/ForgotPassword/forgot_password_ui.dart';
 
-import 'ForgotPassword/forgot_password_ui.dart';
+class ForgotPassword extends StatelessWidget {
+  const ForgotPassword({Key? key}) : super(key: key);
 
-// import 'Login/login_ui.dart';
-// import 'Register/register_ui.dart';
-
-class AuthenScreens extends StatefulWidget {
-  const AuthenScreens({Key? key}) : super(key: key);
-
-  @override
-  _AuthenScreensState createState() => _AuthenScreensState();
-}
-
-class _AuthenScreensState extends State<AuthenScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
