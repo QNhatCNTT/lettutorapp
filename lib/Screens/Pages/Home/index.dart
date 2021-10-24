@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Components/navigation_bar.dart';
+import 'package:lettutorapp/Screens/Pages/Home/room.dart';
 import 'package:lettutorapp/utils/user_info.dart';
-
-import 'home_page.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -43,7 +42,7 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: const SafeArea(child: HomePage()),
+      body: const SafeArea(child: EnterRoom()),
       bottomNavigationBar: const NaviBotBar(),
     );
   }
