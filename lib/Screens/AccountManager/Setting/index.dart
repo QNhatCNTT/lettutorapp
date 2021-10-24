@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lettutorapp/Screens/AccountManager/Setting/feedback_list.dart';
+import 'package:lettutorapp/Screens/AccountManager/Setting/booking_history.dart';
+// import 'package:lettutorapp/Screens/AccountManager/Setting/feedback_list.dart';
 // import 'package:lettutorapp/Screens/AccountManager/Setting/setting.dart';
 
 class SettingPage extends StatelessWidget {
@@ -16,7 +17,7 @@ class SettingPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: const SafeArea(child: FeedbackList()),
+      body: const SafeArea(child: BookingHistory()),
     );
   }
 }

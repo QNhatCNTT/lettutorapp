@@ -8,7 +8,7 @@ class FeedbackCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
       child: Card(
-        elevation: 4,
+        elevation: 6,
         shadowColor: Colors.grey.shade700,
         child: Column(
           children: [
