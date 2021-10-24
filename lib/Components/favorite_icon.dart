@@ -9,34 +9,38 @@ class FavoriteVote extends StatefulWidget {
 
 class _FavoriteVoteState extends State<FavoriteVote> {
   bool _isFavorited = false;
+  void show(String text) => showGeneralDialog(
+        barrierLabel: "Label",
+        barrierDismissible: false,
+        barrierColor: Colors.transparent,
+        transitionDuration: const Duration(milliseconds: 700),
+        context: context,
+        pageBuilder: (context, anim1, anim2) {
+          Future.delayed(const Duration(milliseconds: 1000), () {
+            Navigator.of(context).pop(true);
+          });
+          return AlertDialog(
+              title: Text(text,
+                  style: const TextStyle(fontSize: 16, color: Colors.green)));
+        },
+        transitionBuilder: (context, anim1, anim2, child) {
+          return SlideTransition(
+            position:
+                Tween(begin: const Offset(0, -1), end: const Offset(0, -0.3))
+                    .animate(anim1),
+            child: child,
+          );
+        },
+      );
+
   void _toggleFavorite() {
     setState(() {
       if (_isFavorited) {
         _isFavorited = false;
-        showDialog(
-            context: context,
-            builder: (context) {
-              Future.delayed(const Duration(milliseconds: 500), () {
-                Navigator.of(context).pop(true);
-              });
-              return const AlertDialog(
-                title: Text('Unfavorite successfully',
-                    style: TextStyle(color: Colors.green)),
-              );
-            });
+        show('Unfavorite successfully');
       } else {
         _isFavorited = true;
-        showDialog(
-            context: context,
-            builder: (context) {
-              Future.delayed(const Duration(milliseconds: 500), () {
-                Navigator.of(context).pop(true);
-              });
-              return const AlertDialog(
-                title: Text('Favorite successfully',
-                    style: TextStyle(color: Colors.green)),
-              );
-            });
+        show('Favorite successfully');
       }
     });
   }

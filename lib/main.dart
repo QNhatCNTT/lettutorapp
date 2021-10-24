@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:lettutorapp/Screens/AccountManager/Setting/index.dart';
-import 'package:lettutorapp/Screens/AccountManager/Setting/session_history.dart';
+import 'package:lettutorapp/Screens/Pages/Message/index.dart';
+// import 'package:lettutorapp/Screens/AccountManager/Setting/session_history.dart';
 // import 'Screens/Pages/Courses/index.dart';
 // import 'Screens/Pages/Home/index.dart';
 // import 'Screens/Pages/Teacher/index.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const SessionHistory(),
+      home: const Message(),
     );
   }
 }

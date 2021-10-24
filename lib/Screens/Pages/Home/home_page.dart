@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                       Divider(
                         height: 5,
                         thickness: 3,
-                        endIndent: 43,
+                        endIndent: 33,
                         color: Colors.grey[700],
                       ),
                     ],
