@@ -60,8 +60,8 @@ class _BirthDayState extends State<BirthDay> {
               child: Text(
                 format,
                 style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
+                  color: Colors.black54,
+                  fontSize: 15,
                 ),
                 textAlign: TextAlign.center,
               ),

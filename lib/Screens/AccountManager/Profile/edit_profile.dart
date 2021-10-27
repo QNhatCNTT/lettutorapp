@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Components/button.dart';
+import 'package:lettutorapp/Screens/AccountManager/Profile/components/country_list.dart';
 import 'package:lettutorapp/Screens/AccountManager/Profile/components/datepicker.dart';
 import 'package:lettutorapp/Components/textfield.dart';
 import 'package:lettutorapp/Utils/user_info.dart';
@@ -21,32 +22,33 @@ class EditProfile extends StatelessWidget {
           onPressed: () {},
         ),
         CustomTextField(
+          type: TextInputType.text,
           label: 'User Name',
           text: user.userName,
           onChanged: (text) {},
         ),
         CustomTextField(
+          type: TextInputType.text,
           label: 'Email',
           text: user.email,
           onChanged: (text) {},
         ),
         const BirthDay(),
         CustomTextField(
+          type: TextInputType.number,
           label: 'Phone Number',
           text: user.phoneNumber,
           onChanged: (text) {},
         ),
+        const Country(),
         CustomTextField(
-          label: 'Country',
-          text: user.country,
-          onChanged: (text) {},
-        ),
-        CustomTextField(
+          type: TextInputType.text,
           label: 'Level',
           text: user.myLevel,
           onChanged: (text) {},
         ),
         CustomTextField(
+          type: TextInputType.text,
           label: 'Want To Learn',
           text: 'English, TOEIC',
           onChanged: (text) {},

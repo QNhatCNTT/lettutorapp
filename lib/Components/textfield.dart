@@ -5,12 +5,14 @@ class CustomTextField extends StatelessWidget {
   final String label;
   final String text;
   final ValueChanged<String> onChanged;
+  final TextInputType type;
   const CustomTextField({
     Key? key,
     this.maxLines = 1,
     required this.label,
     required this.text,
     required this.onChanged,
+    required this.type,
   }) : super(key: key);
 
   @override
@@ -25,7 +27,8 @@ class CustomTextField extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
           const SizedBox(height: 10),
-          TextField(
+          TextFormField(
+            keyboardType: type,
             controller: TextEditingController(text: text),
             decoration: InputDecoration(
               border: OutlineInputBorder(
@@ -33,6 +36,7 @@ class CustomTextField extends StatelessWidget {
               ),
             ),
             maxLines: maxLines,
+            onChanged: onChanged,
           ),
         ],
       ),
