@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Components/button.dart';
+import 'package:lettutorapp/Screens/AccountManager/Profile/components/datepicker.dart';
 import 'package:lettutorapp/Components/textfield.dart';
 import 'package:lettutorapp/Utils/user_info.dart';
-
 import 'components/avatar.dart';
 
 class EditProfile extends StatelessWidget {
@@ -30,11 +30,7 @@ class EditProfile extends StatelessWidget {
           text: user.email,
           onChanged: (text) {},
         ),
-        CustomTextField(
-          label: 'Birth Of Day',
-          text: user.birthdate,
-          onChanged: (text) {},
-        ),
+        const BirthDay(),
         CustomTextField(
           label: 'Phone Number',
           text: user.phoneNumber,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Screens/AccountManager/Profile/edit_profile.dart';
 import 'package:lettutorapp/Screens/AccountManager/Profile/profile.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -15,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: const SafeArea(child: Profile()),
+      body: const SafeArea(child: EditProfile()),
     );
   }
 }
