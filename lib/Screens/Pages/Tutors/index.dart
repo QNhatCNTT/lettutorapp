@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lettutorapp/Components/filtter_chip.dart';
 import 'package:lettutorapp/Components/navigation_bar.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'components/filter_chips.dart';
 import 'tutors_page.dart';
 
 class Tutors extends StatefulWidget {
@@ -15,7 +16,7 @@ class _TutorsState extends State<Tutors> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(180),
+        preferredSize: const Size.fromHeight(190),
         child: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
@@ -31,7 +32,7 @@ class _TutorsState extends State<Tutors> {
               ),
             ),
             flexibleSpace: Container(
-              padding: const EdgeInsets.fromLTRB(15, 40, 15, 10),
+              padding: const EdgeInsets.fromLTRB(15, 30, 15, 10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -69,52 +70,7 @@ class _TutorsState extends State<Tutors> {
                       ],
                     ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: const [
-                          FilterTag(chipName: 'English for Kids'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          FilterTag(chipName: 'Business English'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          FilterTag(chipName: 'Conversational English'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          FilterTag(chipName: 'STARTERS'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          FilterTag(chipName: 'MOVERS'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          FilterTag(chipName: 'FLYERS'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          FilterTag(chipName: 'TOEIC'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          FilterTag(chipName: 'TOEFL'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          FilterTag(chipName: 'IELTS'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  const FilterTutor(),
                 ],
               ),
             )),
