@@ -1,18 +1,21 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final int maxLines;
   final String label;
   final String text;
+  final String hint;
   final ValueChanged<String> onChanged;
   final TextInputType type;
   const CustomTextField({
-    Key? key,
+    Key key,
     this.maxLines = 1,
-    required this.label,
-    required this.text,
-    required this.onChanged,
-    required this.type,
+    this.label,
+    this.text,
+    this.onChanged,
+    this.type,
+    this.hint,
   }) : super(key: key);
 
   @override
@@ -28,9 +31,12 @@ class CustomTextField extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           TextFormField(
+            style: const TextStyle(overflow: TextOverflow.clip),
             keyboardType: type,
             controller: TextEditingController(text: text),
             decoration: InputDecoration(
+              hintText: hint,
+              hintStyle: const TextStyle(overflow: TextOverflow.ellipsis),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
               ),

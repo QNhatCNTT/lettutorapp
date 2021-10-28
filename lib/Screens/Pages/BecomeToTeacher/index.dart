@@ -6,6 +6,10 @@ class BecomeToTeacher extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: SafeArea(child: BecomeToTeacherPage()));
+    return const Scaffold(
+      body: SafeArea(
+        child: BecomeToTeacherPage(),
+      ),
+    );
   }
 }

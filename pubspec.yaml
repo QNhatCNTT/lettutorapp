@@ -35,11 +35,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^0.23.0+1
   intl: ^0.17.0
-  steps: ^1.0.1
   date_time_picker: ^2.1.0
   country_list_pick: ^1.0.1+5
   chips_choice: ^2.0.1
   multi_select_flutter: ^4.0.0
+  grouped_buttons: ^1.0.4
+  getwidget: ^2.0.4
+  video_player: ^2.2.6
 
 dev_dependencies:
   flutter_test:
