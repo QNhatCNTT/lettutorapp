@@ -5,6 +5,7 @@ import 'package:lettutorapp/Screens/AccountManager/Profile/components/datepicker
 import 'package:lettutorapp/Components/textfield.dart';
 import 'package:lettutorapp/Utils/user_info.dart';
 import 'components/avatar.dart';
+import 'components/level.dart';
 
 class EditProfile extends StatelessWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -41,12 +42,7 @@ class EditProfile extends StatelessWidget {
           onChanged: (text) {},
         ),
         const Country(),
-        CustomTextField(
-          type: TextInputType.text,
-          label: 'Level',
-          text: user.myLevel,
-          onChanged: (text) {},
-        ),
+        const Level(),
         CustomTextField(
           type: TextInputType.text,
           label: 'Want To Learn',

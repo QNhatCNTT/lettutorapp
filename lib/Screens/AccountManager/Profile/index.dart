@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Screens/AccountManager/Profile/edit_profile.dart';
-import 'package:lettutorapp/Screens/AccountManager/Profile/profile.dart';
+// import 'package:lettutorapp/Screens/AccountManager/Profile/profile.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);

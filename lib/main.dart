@@ -1,7 +1,7 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
-import 'package:lettutorapp/Screens/Pages/Tutors/index.dart';
-// import 'Screens/AccountManager/Profile/index.dart';
+// import 'package:lettutorapp/Screens/Pages/Tutors/index.dart';
+import 'Screens/AccountManager/Profile/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const Tutors(),
+      home: const ProfileScreen(),
     );
   }
 }
