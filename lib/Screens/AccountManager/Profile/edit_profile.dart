@@ -3,6 +3,7 @@ import 'package:lettutorapp/Components/button.dart';
 import 'package:lettutorapp/Screens/AccountManager/Profile/components/country_list.dart';
 import 'package:lettutorapp/Screens/AccountManager/Profile/components/datepicker.dart';
 import 'package:lettutorapp/Components/textfield.dart';
+import 'package:lettutorapp/Screens/AccountManager/Profile/components/wtlearn.dart';
 import 'package:lettutorapp/Utils/user_info.dart';
 import 'components/avatar.dart';
 import 'components/level.dart';
@@ -43,12 +44,7 @@ class EditProfile extends StatelessWidget {
         ),
         const Country(),
         const Level(),
-        CustomTextField(
-          type: TextInputType.text,
-          label: 'Want To Learn',
-          text: 'English, TOEIC',
-          onChanged: (text) {},
-        ),
+        const WTLearn(),
         const SizedBox(
           height: 30,
         ),

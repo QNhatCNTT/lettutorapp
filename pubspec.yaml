@@ -39,6 +39,7 @@ dependencies:
   date_time_picker: ^2.1.0
   country_list_pick: ^1.0.1+5
   chips_choice: ^2.0.1
+  multi_select_flutter: ^4.0.0
 
 dev_dependencies:
   flutter_test:
