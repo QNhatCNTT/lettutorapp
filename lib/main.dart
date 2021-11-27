@@ -1,13 +1,23 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
-import 'Screens/Pages/BecomeToTeacher/index.dart';
+import 'package:lettutorapp/router.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +27,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const BecomeToTeacher(),
+      initialRoute: Routers.Welcome,
+      onGenerateRoute: Routers.generateRoute,
     );
   }
 }
