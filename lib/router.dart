@@ -34,15 +34,16 @@ class Routers {
   static const String Register = '/register';
   static const String Profile = '/profile';
   static const String EditProfile = '/edit-profile';
-  static const String TeacherDetail = '/teacher-detail';
-  static const String RoomMeeting = '/room-meeting';
-  static const String Courses = '/courses';
+  static const String TeacherDetail = '/tutors/teacher-detail';
+  static const String RoomMeeting = '/home/room-meeting';
+  static const String Courses = '/tutors/teacher-detail/courses';
   static const String Become2Teacher = '/settings/become-to-teacher';
   static const String AdvSettings = '/settings/advanced-settings';
   static const String BookingHistory = '/settings/booking-history';
   static const String SessionHistory = '/settings/session-history';
   static const String ViewFeedback = '/settings/view-feedback';
-  static const String CourseDetail = '/courses/course-detail';
+  static const String CourseDetail =
+      '/tutors/teacher-detail/courses/course-detail';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {

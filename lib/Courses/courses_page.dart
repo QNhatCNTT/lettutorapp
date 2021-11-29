@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Courses/page_1.dart';
 import 'package:lettutorapp/Courses/page_2.dart';
@@ -70,7 +72,7 @@ class _CourseScreenState extends State<CourseScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                tab == 0 ? TopicTab() : TutorTab(),
+                tab == 0 ? const TopicTab() : const TutorTab(),
               ],
             ),
             Positioned.fill(
@@ -108,16 +110,22 @@ class _CourseScreenState extends State<CourseScreen> {
                             },
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
+                              children: [
                                 Text(
                                   '10',
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 23),
+                                  style: tab == 0
+                                      ? const TextStyle(
+                                          color: Colors.blue, fontSize: 24)
+                                      : const TextStyle(
+                                          color: Colors.black, fontSize: 22),
                                 ),
                                 Text(
                                   'topics',
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 23),
+                                  style: tab == 0
+                                      ? const TextStyle(
+                                          color: Colors.blue, fontSize: 24)
+                                      : const TextStyle(
+                                          color: Colors.black, fontSize: 22),
                                 ),
                               ],
                             ),
@@ -135,16 +143,22 @@ class _CourseScreenState extends State<CourseScreen> {
                             },
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
+                              children: [
                                 Text(
                                   '1',
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 23),
+                                  style: tab == 1
+                                      ? const TextStyle(
+                                          color: Colors.blue, fontSize: 24)
+                                      : const TextStyle(
+                                          color: Colors.black, fontSize: 22),
                                 ),
                                 Text(
                                   'tutors',
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 23),
+                                  style: tab == 1
+                                      ? const TextStyle(
+                                          color: Colors.blue, fontSize: 24)
+                                      : const TextStyle(
+                                          color: Colors.black, fontSize: 22),
                                 ),
                               ],
                             ),

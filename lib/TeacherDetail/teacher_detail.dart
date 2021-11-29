@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/TeacherDetail/pick_date.dart';
 import 'package:lettutorapp/Widget/feedback.dart';
 import 'package:lettutorapp/Widget/info_courses.dart';
 import 'package:lettutorapp/Widget/info_teacher.dart';
 import 'package:lettutorapp/Widget/intro_teacher.dart';
+import 'package:lettutorapp/router.dart';
 
 class TeacherPage extends StatefulWidget {
   const TeacherPage({Key? key}) : super(key: key);
@@ -30,6 +32,20 @@ class TeacherScreen extends StatefulWidget {
 }
 
 class _TeacherScreenState extends State<TeacherScreen> {
+  void _showDateSheet() {
+    showModalBottomSheet(
+        context: context,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        builder: (context) {
+          return const PickDate();
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -50,7 +66,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                   alignment: Alignment.topLeft,
                   child: IconButton(
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        Navigator.of(context).popAndPushNamed(Routers.Tutors);
                       },
                       icon: const Icon(
                         Icons.chevron_left,
@@ -65,7 +81,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  //booking
+                  _showDateSheet();
                 },
                 style: ButtonStyle(
                   backgroundColor:

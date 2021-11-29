@@ -136,7 +136,7 @@ class SettingScreen extends StatelessWidget {
           CustomButton(
             title: 'Log out',
             onPressed: () {
-              Navigator.of(context).pushNamed(Routers.Login);
+              Navigator.of(context).pushNamed(Routers.Welcome);
             },
             margin: const EdgeInsets.only(bottom: 10),
             height: 50,
