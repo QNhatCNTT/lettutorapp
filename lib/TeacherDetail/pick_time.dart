@@ -20,7 +20,7 @@ class PickTime extends StatelessWidget {
                 ),
               ),
               content: const Text(
-                'Want to book this tutor?',
+                'Would you like to book this class??',
                 style: TextStyle(fontSize: 18, color: Colors.black),
               ),
               actionsAlignment: MainAxisAlignment.center,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/router.dart';
 
 class CardUpcoming extends StatefulWidget {
   const CardUpcoming({Key? key}) : super(key: key);
@@ -113,8 +114,10 @@ class _CardUpcomingState extends State<CardUpcoming> {
                                   topLeft: Radius.circular(8)),
                               side: BorderSide(color: Colors.grey)),
                         ),
-                        onPressed: () {},
-                        child: const Text('Canter',
+                        onPressed: () {
+                          //callpack cancel courses
+                        },
+                        child: const Text('Cancel',
                             style:
                                 TextStyle(fontSize: 18, color: Colors.black)),
                       ),
@@ -132,7 +135,9 @@ class _CardUpcomingState extends State<CardUpcoming> {
                                 BorderRadius.only(topRight: Radius.circular(8)),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(Routers.RoomMeeting);
+                        },
                         child: const Text('Go to Meeting',
                             style:
                                 TextStyle(fontSize: 18, color: Colors.white))),
