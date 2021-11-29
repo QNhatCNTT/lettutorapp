@@ -1,6 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/router.dart';
 
 class PickTime extends StatelessWidget {
   const PickTime({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class PickTime extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
                     ),
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => Navigator.of(context).pop(),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(vertical: 10),
                       child: Text('Cancel',
@@ -44,7 +45,8 @@ class PickTime extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width * 0.35,
                   child: ElevatedButton(
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () =>
+                        Navigator.of(context).popAndPushNamed(Routers.Upcoming),
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
