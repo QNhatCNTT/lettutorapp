@@ -21,7 +21,9 @@ class TutorTab extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Navigator.of(context).popAndPushNamed(Routers.TeacherDetail);
+                Navigator.of(context).pop();
+                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed(Routers.TeacherDetail);
               },
               child: Row(
                 children: const [

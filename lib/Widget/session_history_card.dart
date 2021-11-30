@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/router.dart';
 
 class CardSession extends StatelessWidget {
   const CardSession({Key? key}) : super(key: key);
@@ -123,7 +124,10 @@ class CardSession extends StatelessWidget {
                                   bottomRight: Radius.circular(10)),
                               side: BorderSide(color: Colors.blue.shade200)),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushNamed(Routers.TeacherDetail);
+                        },
                         child: const Text('See Tutor Details',
                             style:
                                 TextStyle(fontSize: 16, color: Colors.blue))),

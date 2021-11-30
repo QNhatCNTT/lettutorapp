@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:motion_toast/motion_toast.dart';
+import 'package:motion_toast/resources/arrays.dart';
 
 class FavoriteVote extends StatefulWidget {
   const FavoriteVote({Key? key}) : super(key: key);
@@ -9,38 +11,32 @@ class FavoriteVote extends StatefulWidget {
 
 class _FavoriteVoteState extends State<FavoriteVote> {
   bool _isFavorited = false;
-  void show(String text) => showGeneralDialog(
-        barrierLabel: "Label",
-        barrierDismissible: false,
-        barrierColor: Colors.transparent,
-        transitionDuration: const Duration(milliseconds: 700),
-        context: context,
-        pageBuilder: (context, anim1, anim2) {
-          Future.delayed(const Duration(milliseconds: 1000), () {
-            Navigator.of(context).pop(true);
-          });
-          return AlertDialog(
-              title: Text(text,
-                  style: const TextStyle(fontSize: 16, color: Colors.green)));
-        },
-        transitionBuilder: (context, anim1, anim2, child) {
-          return SlideTransition(
-            position:
-                Tween(begin: const Offset(0, -1), end: const Offset(0, -0.3))
-                    .animate(anim1),
-            child: child,
-          );
-        },
-      );
+
+  _showFavorite(BuildContext context, String title, String description) {
+    MotionToast(
+            icon: Icons.check,
+            title: title,
+            titleStyle:
+                const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            description: description,
+            descriptionStyle: const TextStyle(fontSize: 16),
+            height: 80,
+            position: MOTION_TOAST_POSITION.TOP,
+            animationType: ANIMATION.FROM_TOP,
+            color: Colors.lightGreen.shade300)
+        .show(context);
+  }
 
   void _toggleFavorite() {
     setState(() {
       if (_isFavorited) {
         _isFavorited = false;
-        show('Unfavorite successfully');
+
+        _showFavorite(context, 'Unfavorite', 'Unfavorite Tutor Successfully');
       } else {
         _isFavorited = true;
-        show('Favorite successfully');
+
+        _showFavorite(context, 'Favorite', 'Favorite Tutor Successfully');
       }
     });
   }

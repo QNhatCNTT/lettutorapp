@@ -66,7 +66,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                   alignment: Alignment.topLeft,
                   child: IconButton(
                       onPressed: () {
-                        Navigator.of(context).popAndPushNamed(Routers.Tutors);
+                        Navigator.of(context).pop();
                       },
                       icon: const Icon(
                         Icons.chevron_left,
