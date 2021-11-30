@@ -12,16 +12,63 @@ class PickTime extends StatelessWidget {
               backgroundColor: Colors.grey.shade50,
               title: const Center(
                 child: Text(
-                  'Confirm',
+                  'Booking Detail',
                   style: TextStyle(
                       fontSize: 22,
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              content: const Text(
-                'Would you like to book this class??',
-                style: TextStyle(fontSize: 18, color: Colors.black),
+              content: Container(
+                height: 120,
+                padding: const EdgeInsets.all(5),
+                child: Column(
+                  children: [
+                    Row(
+                      children: const [
+                        Text(
+                          'Tutor: ',
+                          style: TextStyle(fontSize: 18, color: Colors.black),
+                        ),
+                        Text(
+                          'Ralf Bippert',
+                          style: TextStyle(fontSize: 18, color: Colors.blue),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: const [
+                        Text(
+                          'Booking Date: ',
+                          style: TextStyle(fontSize: 18, color: Colors.black),
+                        ),
+                        Text(
+                          '12/12/2021',
+                          style: TextStyle(fontSize: 18, color: Colors.blue),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: const [
+                        Text(
+                          'Booking Time: ',
+                          style: TextStyle(fontSize: 18, color: Colors.black),
+                        ),
+                        Text(
+                          '11:00 - 11:25',
+                          style: TextStyle(fontSize: 18, color: Colors.blue),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      'Do you to want book this tutor?',
+                      style: TextStyle(fontSize: 18, color: Colors.black),
+                    ),
+                  ],
+                ),
               ),
               actionsAlignment: MainAxisAlignment.center,
               actions: [
@@ -37,7 +84,7 @@ class PickTime extends StatelessWidget {
                     onPressed: () => Navigator.of(context).pop(),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Text('Cancel',
+                      child: Text('No',
                           style: TextStyle(fontSize: 20, color: Colors.blue)),
                     ),
                   ),
@@ -53,7 +100,7 @@ class PickTime extends StatelessWidget {
                     ),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Text('Accept',
+                      child: Text('Book',
                           style: TextStyle(fontSize: 20, color: Colors.white)),
                     ),
                   ),
