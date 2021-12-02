@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Widget/backgroundimage.dart';
+import 'package:lettutorapp/Widget/loading.dart';
 import '../router.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -43,7 +44,10 @@ class WelcomeScreen extends StatelessWidget {
             width: 250,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.of(context).popAndPushNamed(Routers.Login);
+                LoadingDialog.showLoadingDialog(context, 'Loading...');
+                Future.delayed(const Duration(milliseconds: 1000), () {
+                  Navigator.of(context).popAndPushNamed(Routers.Login);
+                });
               },
               style: ElevatedButton.styleFrom(
                   primary: Colors.blue.shade200,

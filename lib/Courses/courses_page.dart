@@ -35,8 +35,8 @@ class _CourseScreenState extends State<CourseScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var imageURL = 'https://images.indianexpress.com/2020/04/online759.jpg';
-    var imageUrl = NetworkImage(imageURL);
+    var imageURL = 'assets/images/info_course.jpg';
+    var imageUrl = AssetImage(imageURL);
 
     return ListView(
       children: [

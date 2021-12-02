@@ -20,8 +20,7 @@ class _IntroTeacherState extends State<IntroTeacher> {
             flex: 1,
             child: CircleAvatar(
               maxRadius: 45,
-              backgroundImage: NetworkImage(
-                  'https://www.incimages.com/uploaded_files/image/1920x1080/getty_481292845_77896.jpg'),
+              backgroundImage: AssetImage('assets/images/avatar3.jpg'),
             ),
           ),
           const SizedBox(

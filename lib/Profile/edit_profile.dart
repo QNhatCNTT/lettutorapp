@@ -6,6 +6,7 @@ import 'package:lettutorapp/Widget/button.dart';
 import 'package:lettutorapp/Widget/country_list.dart';
 import 'package:lettutorapp/Widget/datepicker.dart';
 import 'package:lettutorapp/Widget/level.dart';
+import 'package:lettutorapp/Widget/loading.dart';
 import 'package:lettutorapp/Widget/textfield.dart';
 import 'package:lettutorapp/Utils/user_info.dart';
 import 'package:lettutorapp/Widget/wtlearn.dart';
@@ -82,8 +83,11 @@ class EditProfile extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: 30),
           height: 50,
           onPressed: () {
-            Navigator.of(context).pop();
-            Navigator.of(context).popAndPushNamed(Routers.Profile);
+            LoadingDialog.showLoadingDialog(context, 'Loading...');
+            Future.delayed(const Duration(milliseconds: 900), () {
+              Navigator.of(context).pop();
+              Navigator.of(context).popAndPushNamed(Routers.Profile);
+            });
           },
         ),
       ],

@@ -23,7 +23,7 @@ import 'package:lettutorapp/Welcome/welcome_page.dart';
 import 'package:lettutorapp/notfound.dart';
 
 class Routers {
-  static const String Welcome = '/welcome';
+  static const String Welcome = '/';
   static const String Login = '/login';
   static const String Home = '/home';
   static const String Message = '/message';

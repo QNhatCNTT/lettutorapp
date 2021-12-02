@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:lettutorapp/Validate/validate.dart';
 
 class LoginValidation with ChangeNotifier {
-  var _email = ValidationItem(null, null);
-  var _password = ValidationItem(null, null);
+  var _email = ValidationItem('', '');
+  var _password = ValidationItem('', '');
 
   ValidationItem get email => _email;
   ValidationItem get password => _password;
 
   bool get isValid {
-    // ignore: unnecessary_null_comparison
-    if (_email != null && _password != null) {
+    if (_email.value != null && _password.value != null) {
       return true;
     } else {
       return false;

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lettutorapp/Utils/user_info.dart';
 import 'package:lettutorapp/Widget/button.dart';
 import 'package:lettutorapp/Widget/icon_button.dart';
+import 'package:lettutorapp/Widget/loading.dart';
 import 'package:lettutorapp/Widget/navigation_bar.dart';
 import 'package:lettutorapp/router.dart';
 
@@ -136,7 +137,11 @@ class SettingScreen extends StatelessWidget {
           CustomButton(
             title: 'Log out',
             onPressed: () {
-              Navigator.of(context).pushNamed(Routers.Welcome);
+              LoadingDialog.showLoadingDialog(context, 'Loading...');
+              Future.delayed(const Duration(milliseconds: 900), () {
+                LoadingDialog.hideLoadingDialog(context);
+                Navigator.of(context).pushNamed(Routers.Welcome);
+              });
             },
             margin: const EdgeInsets.only(bottom: 10),
             height: 50,

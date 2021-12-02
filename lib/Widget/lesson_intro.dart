@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Widget/loading.dart';
 import 'package:lettutorapp/router.dart';
 
 class LessonIntro extends StatelessWidget {
@@ -46,7 +47,10 @@ class LessonIntro extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(Routers.RoomMeeting);
+              LoadingDialog.showLoadingDialog(context, 'Loading...');
+              Future.delayed(const Duration(milliseconds: 1000), () {
+                Navigator.of(context).pushNamed(Routers.RoomMeeting);
+              });
             },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.white),

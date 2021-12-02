@@ -38,16 +38,14 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String email = '';
-  String password = '';
   late bool isLogin;
   TextEditingController? emailController;
   TextEditingController? passwordController;
   @override
   void initState() {
-    super.initState();
     isLogin = false;
     getSharedPreferences();
+    super.initState();
   }
 
   Future<void> getSharedPreferences() async {
@@ -63,8 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> loginPressed() async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.setString('email', email);
-    prefs.setString('password', password);
+    prefs.setString('email', emailController!.value.text);
+    prefs.setString('password', passwordController!.value.text);
   }
 
   @override
@@ -127,25 +125,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   LoadingDialog.showLoadingDialog(context, 'Loading...');
                   Future.delayed(const Duration(milliseconds: 900), () {
                     if (!loginValidation.isValid) {
-                      setState(() {
-                        if ((emailController!.value.text ==
-                                'admin@gmail.com') &&
-                            (passwordController!.value.text == 'admin123')) {
-                          isLogin = true;
-                          LoadingDialog.hideLoadingDialog(context);
-                          loginPressed();
-                          Navigator.of(context).popAndPushNamed(Routers.Home);
-                        } else {
-                          isLogin = false;
-                          LoadingDialog.hideLoadingDialog(context);
-                          _showError(context, 'Error',
-                              'Email or password incorrect please try again');
-                        }
-                      });
-                    } else {
                       LoadingDialog.hideLoadingDialog(context);
                       _showError(
-                          context, 'Error', 'Email or password is not empty');
+                          context, 'Error', 'Email or password is not valid');
+                    } else {
+                      if ((emailController!.value.text == 'admin@gmail.com') &&
+                          (passwordController!.value.text == 'admin123')) {
+                        setState(() {
+                          isLogin = true;
+                          loginPressed();
+                        });
+                        LoadingDialog.hideLoadingDialog(context);
+                        Navigator.of(context).popAndPushNamed(Routers.Home);
+                      } else {
+                        LoadingDialog.hideLoadingDialog(context);
+                        _showError(context, 'Error',
+                            'Email or password incorrect please try again');
+                      }
                     }
                   });
                 },

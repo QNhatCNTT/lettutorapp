@@ -32,8 +32,8 @@ class CardTutor extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                             child: const CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                  'https://www.incimages.com/uploaded_files/image/1920x1080/getty_481292845_77896.jpg'),
+                              backgroundImage:
+                                  AssetImage('assets/images/avatar2.jpg'),
                               maxRadius: 30,
                             ),
                           ),

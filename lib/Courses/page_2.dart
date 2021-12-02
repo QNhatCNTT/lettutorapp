@@ -31,8 +31,8 @@ class TutorTab extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
                     child: CircleAvatar(
                       maxRadius: 30,
-                      backgroundImage: NetworkImage(
-                          'https://www.incimages.com/uploaded_files/image/1920x1080/getty_481292845_77896.jpg'),
+                      backgroundImage:
+                          AssetImage('assets/images/ava_page2.jpg'),
                     ),
                   ),
                   Text('April Corpuz',

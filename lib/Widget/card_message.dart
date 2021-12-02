@@ -19,8 +19,7 @@ class CardMessage extends StatelessWidget {
           child: Row(
             children: [
               const AvtMessage(
-                imageUrl:
-                    'https://thumbs.dreamstime.com/b/close-up-portrait-nice-person-bristle-show-finger-okey-sign-isolated-pink-color-background-203466939.jpg',
+                imageUrl: 'assets/images/avatar2.jpg',
                 color: Colors.red,
               ),
               Expanded(

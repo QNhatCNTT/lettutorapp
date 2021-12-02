@@ -22,8 +22,7 @@ class _CardFeedbackState extends State<CardFeedback> {
                 padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
                 child: CircleAvatar(
                   maxRadius: 25,
-                  backgroundImage: NetworkImage(
-                      'https://www.incimages.com/uploaded_files/image/1920x1080/getty_481292845_77896.jpg'),
+                  backgroundImage: AssetImage('assets/images/avatar2.jpg'),
                 ),
               ),
               Expanded(

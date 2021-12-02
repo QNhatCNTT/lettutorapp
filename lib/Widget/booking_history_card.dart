@@ -21,8 +21,7 @@ class CardBooking extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   child: const CircleAvatar(
                     maxRadius: 30,
-                    backgroundImage: NetworkImage(
-                        'https://thumbs.dreamstime.com/b/close-up-portrait-nice-person-bristle-show-finger-okey-sign-isolated-pink-color-background-203466939.jpg'),
+                    backgroundImage: AssetImage('assets/images/avatar2.jpg'),
                   ),
                 ),
                 Expanded(

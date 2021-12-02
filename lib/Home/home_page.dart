@@ -5,47 +5,6 @@ import 'package:lettutorapp/Widget/navigation_bar.dart';
 import 'package:lettutorapp/router.dart';
 import 'package:lettutorapp/utils/user_info.dart';
 
-// class HomePage extends StatefulWidget {
-//   const HomePage({Key? key}) : super(key: key);
-
-//   @override
-//   State<HomePage> createState() => _HomePageState();
-// }
-
-// class _HomePageState extends State<HomePage> {
-//   late int _selectedIndex;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     _selectedIndex = 0;
-//   }
-
-//   static const List<Widget> _widgetOptions = <Widget>[
-//     HomeScreen(),
-//     MessagePage(),
-//     UpcomingPage(),
-//     TutorsPage(),
-//     SettingPage(),
-//   ];
-//   void _ontap(int index) {
-//     setState(() {
-//       _selectedIndex = index;
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Container(child: _widgetOptions.elementAt(_selectedIndex)),
-//       bottomNavigationBar: NaviBotBar(
-//         selectedIndex: _selectedIndex,
-//         ontap: _ontap,
-//       ),
-//     );
-//   }
-// }
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 

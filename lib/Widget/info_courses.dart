@@ -34,8 +34,7 @@ class _InfoCoursesState extends State<InfoCourses> {
               child: Column(
                 children: [
                   const Image(
-                      image: NetworkImage(
-                          'https://images.indianexpress.com/2020/04/online759.jpg')),
+                      image: AssetImage('assets/images/info_course.jpg')),
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.blue[50],

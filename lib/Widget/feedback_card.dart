@@ -21,8 +21,8 @@ class FeedbackCard extends StatelessWidget {
                     padding: EdgeInsets.all(10),
                     child: CircleAvatar(
                       maxRadius: 30,
-                      backgroundImage: NetworkImage(
-                        'https://st3.depositphotos.com/9881890/16378/i/600/depositphotos_163785870-stock-photo-blonde-smiling-businesswoman.jpg',
+                      backgroundImage: AssetImage(
+                        'assets/images/avatar3.jpg',
                       ),
                     ),
                   ),

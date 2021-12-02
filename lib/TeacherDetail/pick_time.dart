@@ -1,6 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Widget/loading.dart';
 import 'package:lettutorapp/router.dart';
 
 class PickTime extends StatelessWidget {
@@ -92,8 +93,12 @@ class PickTime extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width * 0.35,
                   child: ElevatedButton(
-                    onPressed: () =>
-                        Navigator.of(context).popAndPushNamed(Routers.Upcoming),
+                    onPressed: () {
+                      LoadingDialog.showLoadingDialog(context, 'Loading...');
+                      Future.delayed(const Duration(milliseconds: 900), () {
+                        Navigator.of(context).popAndPushNamed(Routers.Upcoming);
+                      });
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
