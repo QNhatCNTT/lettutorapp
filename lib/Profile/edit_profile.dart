@@ -9,6 +9,7 @@ import 'package:lettutorapp/Widget/level.dart';
 import 'package:lettutorapp/Widget/textfield.dart';
 import 'package:lettutorapp/Utils/user_info.dart';
 import 'package:lettutorapp/Widget/wtlearn.dart';
+import 'package:lettutorapp/router.dart';
 
 class EditProfilePage extends StatelessWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -80,7 +81,10 @@ class EditProfile extends StatelessWidget {
           title: 'Save',
           margin: const EdgeInsets.only(bottom: 30),
           height: 50,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+            Navigator.of(context).popAndPushNamed(Routers.Profile);
+          },
         ),
       ],
     );

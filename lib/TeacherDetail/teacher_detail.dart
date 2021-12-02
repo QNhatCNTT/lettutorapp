@@ -4,7 +4,6 @@ import 'package:lettutorapp/Widget/feedback.dart';
 import 'package:lettutorapp/Widget/info_courses.dart';
 import 'package:lettutorapp/Widget/info_teacher.dart';
 import 'package:lettutorapp/Widget/intro_teacher.dart';
-import 'package:lettutorapp/router.dart';
 
 class TeacherPage extends StatefulWidget {
   const TeacherPage({Key? key}) : super(key: key);
