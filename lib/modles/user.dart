@@ -9,13 +9,13 @@ class User {
   final Object wantToLearn;
 
   const User({
-    required this.imagePath,
-    required this.userName,
-    required this.email,
-    required this.birthdate,
-    required this.phoneNumber,
-    required this.country,
-    required this.myLevel,
-    required this.wantToLearn,
+    this.imagePath = '',
+    this.userName = '',
+    this.email = '',
+    this.birthdate = '',
+    this.phoneNumber = '',
+    this.country = '',
+    this.myLevel = '',
+    this.wantToLearn = '',
   });
 }

@@ -5,14 +5,12 @@ class NotFoundData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var imageURL = 'assets/images/no-data-concept-illustration_203587-28.png';
-    var imageUrl = AssetImage(imageURL);
-    precacheImage(imageUrl, context);
+    const imageURL = 'assets/images/no_data_found.png';
     return Container(
       padding: const EdgeInsets.all(20),
-      child: Center(
+      child: const Center(
         child: Image(
-          image: imageUrl,
+          image: AssetImage(imageURL),
         ),
       ),
     );

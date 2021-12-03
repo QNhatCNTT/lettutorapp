@@ -3,14 +3,15 @@ import 'package:motion_toast/motion_toast.dart';
 import 'package:motion_toast/resources/arrays.dart';
 
 class FavoriteVote extends StatefulWidget {
-  const FavoriteVote({Key? key}) : super(key: key);
+  final bool isFavorite;
+  const FavoriteVote({Key? key, required this.isFavorite}) : super(key: key);
 
   @override
   _FavoriteVoteState createState() => _FavoriteVoteState();
 }
 
 class _FavoriteVoteState extends State<FavoriteVote> {
-  bool _isFavorited = false;
+  late bool _isFavorited = widget.isFavorite;
 
   _showFavorite(BuildContext context, String title, String description) {
     MotionToast(

@@ -1,6 +1,8 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Provider/tutor_provider.dart';
 import 'package:lettutorapp/router.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,14 +23,19 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => TutorProvider()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        initialRoute: Routers.Welcome,
+        onGenerateRoute: Routers.generateRoute,
       ),
-      initialRoute: Routers.Welcome,
-      onGenerateRoute: Routers.generateRoute,
     );
   }
 }

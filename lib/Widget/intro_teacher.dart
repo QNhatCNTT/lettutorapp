@@ -48,7 +48,11 @@ class _IntroTeacherState extends State<IntroTeacher> {
                         flex: 1,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
-                          children: const [StarVote()],
+                          children: const [
+                            StarVote(
+                              rating: 5,
+                            )
+                          ],
                         ),
                       ),
                     ],
@@ -70,7 +74,11 @@ class _IntroTeacherState extends State<IntroTeacher> {
                       flex: 1,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children: const [FavoriteVote()],
+                        children: const [
+                          FavoriteVote(
+                            isFavorite: false,
+                          )
+                        ],
                       ),
                     ),
                   ],

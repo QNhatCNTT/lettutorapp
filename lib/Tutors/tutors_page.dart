@@ -1,9 +1,12 @@
 // ignore_for_file: import_of_legacy_library_into_null_safe
 
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Provider/tutor_provider.dart';
 import 'package:lettutorapp/Widget/card_tutor.dart';
 import 'package:lettutorapp/Widget/filter_chips.dart';
 import 'package:lettutorapp/Widget/navigation_bar.dart';
+import 'package:lettutorapp/Widget/no_data.dart';
+import 'package:provider/provider.dart';
 
 class TutorsPage extends StatefulWidget {
   const TutorsPage({Key? key}) : super(key: key);
@@ -13,6 +16,26 @@ class TutorsPage extends StatefulWidget {
 }
 
 class _TutorsPageState extends State<TutorsPage> {
+  TextEditingController searchController = TextEditingController();
+  late String keyword;
+  @override
+  void initState() {
+    searchController.addListener(
+      () {
+        setState(() {
+          keyword = searchController.text;
+        });
+      },
+    );
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,7 +55,7 @@ class _TutorsPageState extends State<TutorsPage> {
                 ),
               ),
               flexibleSpace: Container(
-                padding: const EdgeInsets.fromLTRB(15, 30, 15, 10),
+                padding: const EdgeInsets.fromLTRB(15, 30, 15, 0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -57,6 +80,7 @@ class _TutorsPageState extends State<TutorsPage> {
                           ),
                           Expanded(
                             child: TextField(
+                              controller: searchController,
                               decoration: InputDecoration(
                                 hintText: "Search Tutors",
                                 hintStyle: TextStyle(
@@ -64,11 +88,18 @@ class _TutorsPageState extends State<TutorsPage> {
                                 ),
                                 border: InputBorder.none,
                               ),
-                              onChanged: (String keyword) {},
+                              onChanged: (String keyword) {
+                                Provider.of<TutorProvider>(context,
+                                        listen: false)
+                                    .changeSearch(keyword);
+                              },
                             ),
                           ),
                         ],
                       ),
+                    ),
+                    const SizedBox(
+                      height: 5,
                     ),
                     const FilterTutor(),
                   ],
@@ -89,28 +120,40 @@ class TutorsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(children: [
-      Container(
-        padding: const EdgeInsets.fromLTRB(15, 5, 15, 20),
-        child: Column(
-          children: [
-            SingleChildScrollView(
-              child: Column(
-                children: const [
-                  CardTutor(),
-                  CardTutor(),
-                  CardTutor(),
-                  CardTutor(),
-                  CardTutor(),
-                  CardTutor(),
-                  CardTutor(),
-                  CardTutor(),
-                ],
-              ),
+    return Container(
+      padding: const EdgeInsets.fromLTRB(15, 5, 15, 0),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Expanded(
+            child: Consumer<TutorProvider>(
+              builder: (context, TutorProvider data, child) {
+                return data.getTutor.isEmpty
+                    ? const NotFoundData()
+                    : ListView.builder(
+                        physics: const ScrollPhysics(),
+                        itemCount: data.getTutor.length,
+                        itemBuilder: (context, index) {
+                          return CardTutor(index, data.getTutor[index]);
+                        });
+              },
+              // child: ListView(
+              //   physics: const ScrollPhysics(),
+              //   children: const [
+              //     CardTutor(),
+              //     CardTutor(),
+              //     CardTutor(),
+              //     CardTutor(),
+              //     CardTutor(),
+              //     CardTutor(),
+              //     CardTutor(),
+              //     CardTutor(),
+              //   ],
+              // ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-    ]);
+    );
   }
 }

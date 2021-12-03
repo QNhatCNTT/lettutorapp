@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Widget/favorite_icon.dart';
 import 'package:lettutorapp/Widget/star.dart';
+import 'package:lettutorapp/modles/tutor.dart';
 import 'package:lettutorapp/router.dart';
 import 'tag.dart';
 
+// ignore: must_be_immutable
 class CardLessonV1 extends StatefulWidget {
-  const CardLessonV1({Key? key}) : super(key: key);
+  final Tutor tutor;
+  int index;
+  CardLessonV1(this.index, this.tutor, {Key? key}) : super(key: key);
 
   @override
   _CardLessonV1State createState() => _CardLessonV1State();
@@ -13,7 +17,14 @@ class CardLessonV1 extends StatefulWidget {
 
 class _CardLessonV1State extends State<CardLessonV1> {
   @override
+  void initState() {
+    widget.tutor.isFavorite;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final list = widget.tutor.specialties.split(',');
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Card(
@@ -38,9 +49,8 @@ class _CardLessonV1State extends State<CardLessonV1> {
                           flex: 1,
                           child: Container(
                             padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
-                            child: const CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/images/ava_page2.jpg'),
+                            child: CircleAvatar(
+                              backgroundImage: AssetImage(widget.tutor.avatar),
                               maxRadius: 40,
                             ),
                           ),
@@ -52,11 +62,11 @@ class _CardLessonV1State extends State<CardLessonV1> {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  const Expanded(
+                                  Expanded(
                                     flex: 3,
                                     child: Text(
-                                      'Keegan',
-                                      style: TextStyle(
+                                      widget.tutor.name,
+                                      style: const TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -66,14 +76,18 @@ class _CardLessonV1State extends State<CardLessonV1> {
                                     flex: 1,
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
-                                      children: const [
-                                        FavoriteVote(),
+                                      children: [
+                                        FavoriteVote(
+                                          isFavorite: widget.tutor.isFavorite,
+                                        ),
                                       ],
                                     ),
                                   ),
                                 ],
                               ),
-                              const StarVote(),
+                              StarVote(
+                                rating: widget.tutor.rating,
+                              ),
                               const SizedBox(
                                 height: 5,
                               ),
@@ -82,17 +96,22 @@ class _CardLessonV1State extends State<CardLessonV1> {
                                 child: SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
                                   child: Row(
-                                    children: const [
-                                      Tag(text: 'English'),
-                                      Tag(text: 'English for kid'),
-                                      Tag(text: 'TOEIC'),
-                                      Tag(text: 'TOEFL'),
-                                      Tag(text: 'English for bussiness'),
-                                      Tag(text: 'tagalog'),
-                                      Tag(text: 'KID'),
-                                      Tag(text: 'Korea'),
-                                    ],
-                                  ),
+                                      children: list
+                                          .map((value) => Tag(
+                                                text: value,
+                                              ))
+                                          .toList()
+                                      // children: [
+                                      //   Tag(text: 'English'),
+                                      //   Tag(text: 'English for kid'),
+                                      //   Tag(text: 'TOEIC'),
+                                      //   Tag(text: 'TOEFL'),
+                                      //   Tag(text: 'English for bussiness'),
+                                      //   Tag(text: 'tagalog'),
+                                      //   Tag(text: 'KID'),
+                                      //   Tag(text: 'Korea'),
+                                      // ],
+                                      ),
                                 ),
                               ),
                             ],
@@ -106,12 +125,12 @@ class _CardLessonV1State extends State<CardLessonV1> {
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: const Text(
-                      'I am passionate about running and fitness, I often compete in trail/mountain running events and I love pushing myself. I am training to one day take part in ultra-endurance events. I also enjoy watching rugby on the weekends, reading and watching',
+                    child: Text(
+                      widget.tutor.bio,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.start,
-                      maxLines: 3,
-                      style: TextStyle(fontSize: 16),
+                      maxLines: 4,
+                      style: const TextStyle(fontSize: 16),
                     ),
                   ),
                 ],

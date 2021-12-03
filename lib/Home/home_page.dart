@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Provider/tutor_provider.dart';
 import 'package:lettutorapp/Widget/card_lesson_v1.dart';
 import 'package:lettutorapp/Widget/lesson_intro.dart';
 import 'package:lettutorapp/Widget/navigation_bar.dart';
+import 'package:lettutorapp/Widget/no_data.dart';
 import 'package:lettutorapp/router.dart';
 import 'package:lettutorapp/utils/user_info.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,11 +17,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   static const user = UserInfo.myUser;
-  // late int index;
   @override
   void initState() {
     super.initState();
-    // index = 0;
   }
 
   @override
@@ -46,13 +47,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.of(context).pushNamed(Routers.Profile);
                 },
                 icon: CircleAvatar(
-                  backgroundImage: NetworkImage(user.imagePath),
+                  backgroundImage: AssetImage(user.imagePath),
                 ),
               ),
             )
           ],
         ),
-        body: ListView(children: [
+        body: ListView(physics: const ScrollPhysics(), children: [
           Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -68,21 +69,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       flex: 2,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(
+                        children: const [
+                          SizedBox(
                             height: 5,
                           ),
-                          const Text('Recommended Tutors',
+                          Text('Recommended Tutors',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
+                                decoration: TextDecoration.underline,
                               )),
-                          Divider(
-                            height: 5,
-                            thickness: 3,
-                            endIndent: 33,
-                            color: Colors.grey[700],
-                          ),
                         ],
                       ),
                     ),
@@ -117,13 +113,28 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const CardLessonV1(),
-              const CardLessonV1(),
-              const CardLessonV1(),
-              const CardLessonV1(),
-              const CardLessonV1(),
-              const CardLessonV1(),
-              const CardLessonV1(),
+              Consumer<TutorProvider>(
+                  builder: (context, TutorProvider data, child) {
+                return data.getTutor.isEmpty
+                    ? const NotFoundData()
+                    : SizedBox(
+                        child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: data.getTutor.length,
+                          itemBuilder: (context, index) {
+                            return CardLessonV1(index, data.getTutor[index]);
+                          },
+                        ),
+                      );
+              }),
+              // const CardLessonV1(),
+              // const CardLessonV1(),
+              // const CardLessonV1(),
+              // const CardLessonV1(),
+              // const CardLessonV1(),
+              // const CardLessonV1(),
+              // const CardLessonV1(),
               const SizedBox(
                 height: 15,
               ),

@@ -48,7 +48,11 @@ class _CardFeedbackState extends State<CardFeedback> {
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
-                            children: const [StarVote()],
+                            children: const [
+                              StarVote(
+                                rating: 5,
+                              )
+                            ],
                           ),
                         ],
                       ),

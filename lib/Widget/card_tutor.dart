@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Widget/tag.dart';
+import 'package:lettutorapp/modles/tutor.dart';
 import 'package:lettutorapp/router.dart';
 
+// ignore: must_be_immutable
 class CardTutor extends StatelessWidget {
-  const CardTutor({Key? key}) : super(key: key);
+  final Tutor tutor;
+  int index;
+  CardTutor(this.index, this.tutor, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final list = tutor.specialties.split(',');
     return Container(
       padding: const EdgeInsets.all(5),
       child: Card(
@@ -31,9 +36,8 @@ class CardTutor extends StatelessWidget {
                           flex: 1,
                           child: Container(
                             padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
-                            child: const CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/images/avatar2.jpg'),
+                            child: CircleAvatar(
+                              backgroundImage: AssetImage(tutor.avatar),
                               maxRadius: 30,
                             ),
                           ),
@@ -44,11 +48,11 @@ class CardTutor extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  const Expanded(
+                                  Expanded(
                                     flex: 3,
                                     child: Text(
-                                      'Keegan',
-                                      style: TextStyle(
+                                      tutor.name,
+                                      style: const TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -58,15 +62,15 @@ class CardTutor extends StatelessWidget {
                                     flex: 1,
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
-                                      children: const [
+                                      children: [
                                         Text(
-                                          '5.00',
-                                          style: TextStyle(
+                                          tutor.rating.toString(),
+                                          style: const TextStyle(
                                             color: Colors.red,
                                             fontSize: 16,
                                           ),
                                         ),
-                                        Icon(
+                                        const Icon(
                                           Icons.star,
                                           color: Colors.yellow,
                                         ),
@@ -81,16 +85,21 @@ class CardTutor extends StatelessWidget {
                                 child: SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
                                   child: Row(
-                                    children: const [
-                                      Tag(text: 'English'),
-                                      Tag(text: 'English for kid'),
-                                      Tag(text: 'TOEIC'),
-                                      Tag(text: 'TOEFL'),
-                                      Tag(text: 'English for bussiness'),
-                                      Tag(text: 'tagalog'),
-                                      Tag(text: 'KID'),
-                                      Tag(text: 'Korea'),
-                                    ],
+                                    children: list
+                                        .map((value) => Tag(
+                                              text: value,
+                                            ))
+                                        .toList(),
+                                    // children: const [
+                                    //   Tag(text: 'English'),
+                                    //   Tag(text: 'English for kid'),
+                                    //   Tag(text: 'TOEIC'),
+                                    //   Tag(text: 'TOEFL'),
+                                    //   Tag(text: 'English for bussiness'),
+                                    //   Tag(text: 'tagalog'),
+                                    //   Tag(text: 'KID'),
+                                    //   Tag(text: 'Korea'),
+                                    // ],
                                   ),
                                 ),
                               ),
@@ -105,11 +114,11 @@ class CardTutor extends StatelessWidget {
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: const Text(
-                      'I am passionate about running and fitness, I often compete in trail/mountain running events and I love pushing myself. I am training to one day take part in ultra-endurance events. I also enjoy watching rugby on the weekends, reading and watching',
+                    child: Text(
+                      tutor.bio,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.start,
-                      maxLines: 3,
+                      maxLines: 4,
                     ),
                   ),
                 ],
