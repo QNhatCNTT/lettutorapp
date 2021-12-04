@@ -48,7 +48,7 @@ class LessonIntro extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               LoadingDialog.showLoadingDialog(context, 'Loading...');
-              Future.delayed(const Duration(milliseconds: 1000), () {
+              Future.delayed(const Duration(milliseconds: 2000), () {
                 Navigator.of(context).pushNamed(Routers.RoomMeeting);
               });
             },

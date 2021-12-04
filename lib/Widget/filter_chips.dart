@@ -1,6 +1,8 @@
 // @dart=2.9
 import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Provider/tutor_provider.dart';
+import 'package:provider/provider.dart';
 
 class FilterTutor extends StatefulWidget {
   const FilterTutor({Key key}) : super(key: key);
@@ -29,7 +31,12 @@ class _FilterTutorState extends State<FilterTutor> {
         padding: const EdgeInsets.symmetric(horizontal: 0),
         child: ChipsChoice<int>.single(
           value: tag,
-          onChanged: (val) => setState(() => tag = val),
+          onChanged: (val) {
+            print(options[val]);
+            setState(() => tag = val);
+            Provider.of<TutorProvider>(context, listen: false)
+                .changeFilter(options[val]);
+          },
           choiceItems: C2Choice.listFrom<int, String>(
             source: options,
             value: (i, v) => i,

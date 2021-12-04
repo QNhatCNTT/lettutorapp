@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 title: 'Sign in',
                 onPressed: () {
                   LoadingDialog.showLoadingDialog(context, 'Loading...');
-                  Future.delayed(const Duration(milliseconds: 900), () {
+                  Future.delayed(const Duration(milliseconds: 5000), () {
                     if (!loginValidation.isValid) {
                       LoadingDialog.hideLoadingDialog(context);
                       _showError(

@@ -138,7 +138,7 @@ class SettingScreen extends StatelessWidget {
             title: 'Log out',
             onPressed: () {
               LoadingDialog.showLoadingDialog(context, 'Loading...');
-              Future.delayed(const Duration(milliseconds: 900), () {
+              Future.delayed(const Duration(milliseconds: 2000), () {
                 LoadingDialog.hideLoadingDialog(context);
                 Navigator.of(context).pushNamed(Routers.Welcome);
               });

@@ -95,7 +95,7 @@ class PickTime extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       LoadingDialog.showLoadingDialog(context, 'Loading...');
-                      Future.delayed(const Duration(milliseconds: 900), () {
+                      Future.delayed(const Duration(milliseconds: 2000), () {
                         Navigator.of(context).popAndPushNamed(Routers.Upcoming);
                       });
                     },

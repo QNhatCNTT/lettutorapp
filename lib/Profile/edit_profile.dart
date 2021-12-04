@@ -84,7 +84,7 @@ class EditProfile extends StatelessWidget {
           height: 50,
           onPressed: () {
             LoadingDialog.showLoadingDialog(context, 'Loading...');
-            Future.delayed(const Duration(milliseconds: 900), () {
+            Future.delayed(const Duration(milliseconds: 2000), () {
               Navigator.of(context).pop();
               Navigator.of(context).popAndPushNamed(Routers.Profile);
             });

@@ -91,7 +91,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               title: 'Reset password',
               onPressed: () {
                 LoadingDialog.showLoadingDialog(context, 'Loading...');
-                Future.delayed(const Duration(milliseconds: 900), () {
+                Future.delayed(const Duration(milliseconds: 2000), () {
                   if (!forgotPasswordValidate.isValid) {
                     LoadingDialog.hideLoadingDialog(context);
                     _showError(context, 'Error', 'Email is not empty');

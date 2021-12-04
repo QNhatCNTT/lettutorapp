@@ -1,9 +1,11 @@
 // ignore_for_file: import_of_legacy_library_into_null_safe
 
+import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Provider/tutor_provider.dart';
 import 'package:lettutorapp/Widget/card_tutor.dart';
 import 'package:lettutorapp/Widget/filter_chips.dart';
+import 'package:lettutorapp/Widget/loading.dart';
 import 'package:lettutorapp/Widget/navigation_bar.dart';
 import 'package:lettutorapp/Widget/no_data.dart';
 import 'package:provider/provider.dart';
@@ -18,6 +20,21 @@ class TutorsPage extends StatefulWidget {
 class _TutorsPageState extends State<TutorsPage> {
   TextEditingController searchController = TextEditingController();
   late String keyword;
+  late int tag;
+  List<String> options = [
+    'All',
+    'English for Kids',
+    'English for Business',
+    'Conversational',
+    'STARTERS',
+    'MOVERS',
+    'FLYERS',
+    'KET',
+    'PET',
+    'IELST',
+    'TOEFL',
+    'TOEIC',
+  ];
   @override
   void initState() {
     searchController.addListener(
@@ -27,6 +44,7 @@ class _TutorsPageState extends State<TutorsPage> {
         });
       },
     );
+    tag = 0;
     super.initState();
   }
 
@@ -89,9 +107,15 @@ class _TutorsPageState extends State<TutorsPage> {
                                 border: InputBorder.none,
                               ),
                               onChanged: (String keyword) {
-                                Provider.of<TutorProvider>(context,
-                                        listen: false)
-                                    .changeSearch(keyword);
+                                LoadingDialog.showLoadingDialog(
+                                    context, 'Loading...');
+                                Future.delayed(
+                                    const Duration(milliseconds: 400), () {
+                                  LoadingDialog.hideLoadingDialog(context);
+                                  Provider.of<TutorProvider>(context,
+                                          listen: false)
+                                      .changeSearch(keyword);
+                                });
                               },
                             ),
                           ),
@@ -101,7 +125,40 @@ class _TutorsPageState extends State<TutorsPage> {
                     const SizedBox(
                       height: 5,
                     ),
-                    const FilterTutor(),
+                    Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 0),
+                        child: ChipsChoice<int>.single(
+                          value: tag,
+                          onChanged: (val) {
+                            print(options[val]);
+                            LoadingDialog.showLoadingDialog(
+                                context, 'Loading...');
+                            Future.delayed(const Duration(milliseconds: 700),
+                                () {
+                              setState(() => tag = val);
+                              LoadingDialog.hideLoadingDialog(context);
+                              Provider.of<TutorProvider>(context, listen: false)
+                                  .changeFilter(options[val]);
+                              setState(() {
+                                options.removeAt(val);
+                              });
+                            });
+                          },
+                          choiceItems: C2Choice.listFrom<int, String>(
+                            source: options,
+                            value: (i, v) => i,
+                            label: (i, v) => v,
+                          ),
+                          choiceStyle: C2ChoiceStyle(
+                            labelStyle: const TextStyle(color: Colors.black),
+                            color: Colors.blue.shade50,
+                            brightness: Brightness.dark,
+                            showCheckmark: false,
+                          ),
+                          choiceActiveStyle: const C2ChoiceStyle(
+                            color: Colors.blue,
+                          ),
+                        )),
                   ],
                 ),
               )),
@@ -121,35 +178,23 @@ class TutorsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(15, 5, 15, 0),
+      padding: const EdgeInsets.fromLTRB(5, 5, 5, 0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
           Expanded(
             child: Consumer<TutorProvider>(
               builder: (context, TutorProvider data, child) {
-                return data.getTutor.isEmpty
+                return data.listFavoriteTutor.isEmpty
                     ? const NotFoundData()
                     : ListView.builder(
                         physics: const ScrollPhysics(),
-                        itemCount: data.getTutor.length,
+                        itemCount: data.listFavoriteTutor.length,
                         itemBuilder: (context, index) {
-                          return CardTutor(index, data.getTutor[index]);
+                          return CardTutor(
+                              index, data.listFavoriteTutor[index]);
                         });
               },
-              // child: ListView(
-              //   physics: const ScrollPhysics(),
-              //   children: const [
-              //     CardTutor(),
-              //     CardTutor(),
-              //     CardTutor(),
-              //     CardTutor(),
-              //     CardTutor(),
-              //     CardTutor(),
-              //     CardTutor(),
-              //     CardTutor(),
-              //   ],
-              // ),
             ),
           ),
         ],

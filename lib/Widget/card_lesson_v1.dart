@@ -24,7 +24,7 @@ class _CardLessonV1State extends State<CardLessonV1> {
 
   @override
   Widget build(BuildContext context) {
-    final list = widget.tutor.specialties.split(',');
+    final list = widget.tutor.languages.split(',');
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Card(
@@ -92,6 +92,7 @@ class _CardLessonV1State extends State<CardLessonV1> {
                                 height: 5,
                               ),
                               Container(
+                                alignment: Alignment.centerLeft,
                                 padding: const EdgeInsets.all(0),
                                 child: SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,

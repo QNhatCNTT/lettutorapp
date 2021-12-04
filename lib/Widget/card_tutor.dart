@@ -11,9 +11,9 @@ class CardTutor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list = tutor.specialties.split(',');
+    final list = tutor.languages.split(',');
     return Container(
-      padding: const EdgeInsets.all(5),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       child: Card(
         shadowColor: Colors.grey[800],
         elevation: 5,
@@ -81,6 +81,7 @@ class CardTutor extends StatelessWidget {
                               ),
                               const SizedBox(height: 8),
                               Container(
+                                alignment: Alignment.centerLeft,
                                 padding: const EdgeInsets.all(0),
                                 child: SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,

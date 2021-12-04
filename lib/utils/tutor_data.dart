@@ -28,10 +28,11 @@ class TutorData {
         'Chinese, Russian, and Ukrainian students.',
     profession: 'Online English Teacher',
     interests: 'Cooking, Mingling with kids, Travelling',
+    languages: 'English,Tagalog',
     specialties:
         'English for Business,Conversational,English for kids,STARTERS,MOVERS',
     rating: 5.00,
-    isFavorite: true,
+    isFavorite: 1,
   );
   static final tutorData2 = Tutor(
     id: '4fd6e51b-2f14-426f-8dec-4736ee6ee67a',
@@ -62,8 +63,9 @@ class TutorData {
         'Listening to music and traveling are also some of my top favorite things to do when I have spare time.',
     specialties:
         'English for kids,STARTERS,FLYERS,KET,PET,MOVERS,Conversational',
+    languages: 'English,Vietnamese',
     rating: 4.50,
-    isFavorite: false,
+    isFavorite: 0,
   );
   static final tutorData3 = Tutor(
     id: 'd7cbb4fe-b9ba-4f1d-86f4-fa1a88b4979d',
@@ -89,7 +91,8 @@ class TutorData {
         'I am music enthusiast, my hobbies are playing guitar, singing and dancing.',
     specialties:
         'English for kids,English for Business,Conversational,STARTERS,MOVERS',
+    languages: 'English,Tagalog',
     rating: 5.00,
-    isFavorite: false,
+    isFavorite: 1,
   );
 }

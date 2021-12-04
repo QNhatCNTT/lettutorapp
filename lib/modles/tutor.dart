@@ -10,7 +10,8 @@ class Tutor {
   String profession;
   String interests;
   String specialties;
-  bool isFavorite;
+  String languages;
+  int isFavorite;
   double rating;
 
   Tutor({
@@ -25,7 +26,8 @@ class Tutor {
     this.profession = '',
     this.interests = '',
     this.specialties = '',
+    this.languages = '',
     this.rating = 0,
-    this.isFavorite = false,
+    this.isFavorite = 0, // 0: false, 1:true
   });
 }

@@ -76,7 +76,7 @@ class _IntroTeacherState extends State<IntroTeacher> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: const [
                           FavoriteVote(
-                            isFavorite: false,
+                            isFavorite: 0,
                           )
                         ],
                       ),

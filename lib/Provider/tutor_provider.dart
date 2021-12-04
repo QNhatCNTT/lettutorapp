@@ -14,6 +14,11 @@ class TutorProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void changeFilter(String value) {
+    selectedTag = value;
+    notifyListeners();
+  }
+
   List<Tutor> get getTutor {
     if (keyword.isEmpty) {
       return _tutors;
@@ -25,6 +30,30 @@ class TutorProvider with ChangeNotifier {
     }
   }
 
-  List<Tutor> get listFavoriteTutor =>
-      _tutors.where((tutor) => tutor.isFavorite == true).toList();
+  String selectedTag = 'All';
+
+  List<Tutor> get listFavoriteTutor {
+    sortFavoriteTutor();
+    if (keyword.isEmpty && selectedTag == 'All') {
+      return _tutors;
+    } else if (keyword.isNotEmpty) {
+      return _tutors
+          .where((tutor) =>
+              tutor.name.toLowerCase().contains(keyword.toLowerCase()))
+          .toList();
+    } else if (selectedTag != 'All') {
+      return _tutors
+          .where((tutor) => tutor.specialties
+              .toLowerCase()
+              .split(',')
+              .contains(selectedTag.toLowerCase()))
+          .toList();
+    }
+    return _tutors;
+  }
+
+  void sortFavoriteTutor() {
+    _tutors
+        .sort((Tutor t1, Tutor t2) => t2.isFavorite.compareTo(t1.isFavorite));
+  }
 }

@@ -105,7 +105,7 @@ class RegisterScreen extends StatelessWidget {
                 title: 'Register',
                 onPressed: () {
                   LoadingDialog.showLoadingDialog(context, 'Loading...');
-                  Future.delayed(const Duration(milliseconds: 900), () {
+                  Future.delayed(const Duration(milliseconds: 2000), () {
                     if (!registerValidate.isValid) {
                       LoadingDialog.hideLoadingDialog(context);
                       _showError(context, 'Error', 'Register failed!');
