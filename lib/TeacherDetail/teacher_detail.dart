@@ -4,6 +4,7 @@ import 'package:lettutorapp/Widget/feedback.dart';
 import 'package:lettutorapp/Widget/info_courses.dart';
 import 'package:lettutorapp/Widget/info_teacher.dart';
 import 'package:lettutorapp/Widget/intro_teacher.dart';
+import 'package:lettutorapp/modles/tutor.dart';
 
 class TeacherPage extends StatefulWidget {
   const TeacherPage({Key? key}) : super(key: key);
@@ -15,16 +16,18 @@ class TeacherPage extends StatefulWidget {
 class _TeacherPageState extends State<TeacherPage> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    final tutor = ModalRoute.of(context)!.settings.arguments as Tutor;
+    return SafeArea(
       child: Scaffold(
-        body: TeacherScreen(),
+        body: TeacherScreen(tutor: tutor),
       ),
     );
   }
 }
 
 class TeacherScreen extends StatefulWidget {
-  const TeacherScreen({Key? key}) : super(key: key);
+  final Tutor tutor;
+  const TeacherScreen({Key? key, required this.tutor}) : super(key: key);
 
   @override
   _TeacherScreenState createState() => _TeacherScreenState();
@@ -58,8 +61,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                     padding: const EdgeInsets.all(0),
                     width: double.infinity,
                     height: 200,
-                    child: const Image(
-                        image: AssetImage('assets/images/welcome.png'))),
+                    child: Image(image: AssetImage(widget.tutor.avatar))),
                 Positioned.fill(
                     child: Align(
                   alignment: Alignment.topLeft,
@@ -74,7 +76,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                 ))
               ],
             ),
-            const IntroTeacher(),
+            IntroTeacher(tutor: widget.tutor),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               width: double.infinity,
@@ -182,7 +184,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                 ],
               ),
             ),
-            const InfoTeacher(),
+            InfoTeacher(tutor: widget.tutor),
             const InfoCourses(),
             const Feedbacks(),
           ],

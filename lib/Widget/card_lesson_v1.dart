@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:lettutorapp/Widget/favorite_icon.dart';
 import 'package:lettutorapp/Widget/star.dart';
 import 'package:lettutorapp/modles/tutor.dart';
-import 'package:lettutorapp/router.dart';
 import 'tag.dart';
 
 // ignore: must_be_immutable
 class CardLessonV1 extends StatefulWidget {
   final Tutor tutor;
   int index;
-  CardLessonV1(this.index, this.tutor, {Key? key}) : super(key: key);
+  final GestureTapCallback? ontap;
+  CardLessonV1({
+    Key? key,
+    required this.index,
+    required this.tutor,
+    required this.ontap,
+  }) : super(key: key);
 
   @override
   _CardLessonV1State createState() => _CardLessonV1State();
@@ -34,9 +39,10 @@ class _CardLessonV1State extends State<CardLessonV1> {
           borderRadius: BorderRadius.circular(15),
         ),
         child: InkWell(
-          onTap: () {
-            Navigator.of(context).pushNamed(Routers.TeacherDetail);
-          },
+          onTap: widget.ontap,
+          // onTap: () {
+          //   Navigator.of(context).pushNamed(Routers.TeacherDetail);
+          // },
           child: Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 20),
               child: Column(

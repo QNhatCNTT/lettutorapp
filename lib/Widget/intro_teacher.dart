@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Widget/favorite_icon.dart';
 import 'package:lettutorapp/Widget/star.dart';
+import 'package:lettutorapp/modles/tutor.dart';
 
 class IntroTeacher extends StatefulWidget {
-  const IntroTeacher({Key? key}) : super(key: key);
+  final Tutor tutor;
+  const IntroTeacher({Key? key, required this.tutor}) : super(key: key);
 
   @override
   _IntroTeacherState createState() => _IntroTeacherState();
@@ -16,11 +18,11 @@ class _IntroTeacherState extends State<IntroTeacher> {
       padding: const EdgeInsets.all(20),
       child: Row(
         children: [
-          const Expanded(
+          Expanded(
             flex: 1,
             child: CircleAvatar(
               maxRadius: 45,
-              backgroundImage: AssetImage('assets/images/avatar3.jpg'),
+              backgroundImage: AssetImage(widget.tutor.avatar),
             ),
           ),
           const SizedBox(
@@ -34,11 +36,11 @@ class _IntroTeacherState extends State<IntroTeacher> {
                   padding: const EdgeInsets.only(top: 10),
                   child: Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                         flex: 1,
                         child: Text(
-                          'Ralf Bippert',
-                          style: TextStyle(
+                          widget.tutor.name,
+                          style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -48,9 +50,9 @@ class _IntroTeacherState extends State<IntroTeacher> {
                         flex: 1,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
-                          children: const [
+                          children: [
                             StarVote(
-                              rating: 5,
+                              rating: widget.tutor.rating,
                             )
                           ],
                         ),
@@ -60,23 +62,25 @@ class _IntroTeacherState extends State<IntroTeacher> {
                 ),
                 Row(
                   children: [
-                    const Expanded(
+                    Expanded(
                       flex: 1,
-                      child: Text(
-                        'Teacher',
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 16,
-                        ),
-                      ),
+                      child: widget.tutor.isTeacher == 1
+                          ? const Text(
+                              'Teacher',
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 16,
+                              ),
+                            )
+                          : const Text(''),
                     ),
                     Expanded(
                       flex: 1,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children: const [
+                        children: [
                           FavoriteVote(
-                            isFavorite: 0,
+                            isFavorite: widget.tutor.isFavorite,
                           )
                         ],
                       ),
@@ -84,13 +88,13 @@ class _IntroTeacherState extends State<IntroTeacher> {
                   ],
                 ),
                 Row(
-                  children: const [
+                  children: [
                     Expanded(
                       flex: 1,
                       child: Padding(
-                        padding: EdgeInsets.only(bottom: 10),
-                        child: Text('South Africa',
-                            style: TextStyle(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Text(widget.tutor.country,
+                            style: const TextStyle(
                               color: Colors.black,
                               fontSize: 16,
                             )),

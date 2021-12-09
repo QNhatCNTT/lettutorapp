@@ -4,6 +4,7 @@ import 'package:lettutorapp/Widget/card_lesson_v1.dart';
 import 'package:lettutorapp/Widget/lesson_intro.dart';
 import 'package:lettutorapp/Widget/navigation_bar.dart';
 import 'package:lettutorapp/Widget/no_data.dart';
+import 'package:lettutorapp/Widget/no_lesson.dart';
 import 'package:lettutorapp/router.dart';
 import 'package:lettutorapp/utils/user_info.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> booking = [];
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -57,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              const LessonIntro(),
+              booking.isEmpty ? const NoLesson() : const LessonIntro(),
               const SizedBox(
                 height: 20,
               ),
@@ -123,7 +125,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           shrinkWrap: true,
                           itemCount: data.getTutor.length,
                           itemBuilder: (context, index) {
-                            return CardLessonV1(index, data.getTutor[index]);
+                            return CardLessonV1(
+                              index: index,
+                              tutor: data.getTutor[index],
+                              ontap: () {
+                                Navigator.of(context).pushNamed(
+                                    Routers.TeacherDetail,
+                                    arguments: data.getTutor[index]);
+                              },
+                            );
                           },
                         ),
                       );

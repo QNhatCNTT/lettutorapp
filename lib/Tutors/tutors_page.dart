@@ -8,6 +8,7 @@ import 'package:lettutorapp/Widget/filter_chips.dart';
 import 'package:lettutorapp/Widget/loading.dart';
 import 'package:lettutorapp/Widget/navigation_bar.dart';
 import 'package:lettutorapp/Widget/no_data.dart';
+import 'package:lettutorapp/router.dart';
 import 'package:provider/provider.dart';
 
 class TutorsPage extends StatefulWidget {
@@ -192,7 +193,13 @@ class TutorsScreen extends StatelessWidget {
                         itemCount: data.listFavoriteTutor.length,
                         itemBuilder: (context, index) {
                           return CardTutor(
-                              index, data.listFavoriteTutor[index]);
+                              index: index,
+                              tutor: data.listFavoriteTutor[index],
+                              ontap: () {
+                                Navigator.of(context).pushNamed(
+                                    Routers.TeacherDetail,
+                                    arguments: data.listFavoriteTutor[index]);
+                              });
                         });
               },
             ),

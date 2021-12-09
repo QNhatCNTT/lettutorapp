@@ -2,7 +2,7 @@ import 'package:lettutorapp/modles/tutor.dart';
 
 class TutorData {
   static final tutorData1 = Tutor(
-    id: 'a53b7d90-4267-4f02-abe5-7a72e3cc7a5b',
+    id: '1',
     name: 'April Corpuz',
     userID: 'cd0a440b-cd19-4c55-a2a2-612707b1c12c',
     avatar: 'assets/images/tutor1.jpg',
@@ -33,9 +33,11 @@ class TutorData {
         'English for Business,Conversational,English for kids,STARTERS,MOVERS',
     rating: 5.00,
     isFavorite: 1,
+    country: 'Philippines',
+    isTeacher: 1,
   );
   static final tutorData2 = Tutor(
-    id: '4fd6e51b-2f14-426f-8dec-4736ee6ee67a',
+    id: '2',
     name: 'Kathy Huỳnh',
     userID: '7a1067cc-4a79-494d-820c-34e63cf60748',
     avatar: 'assets/images/tutor2.jpg',
@@ -66,9 +68,11 @@ class TutorData {
     languages: 'English,Vietnamese',
     rating: 4.50,
     isFavorite: 0,
+    country: 'Viet Name',
+    isTeacher: 1,
   );
   static final tutorData3 = Tutor(
-    id: 'd7cbb4fe-b9ba-4f1d-86f4-fa1a88b4979d',
+    id: '3',
     name: 'Maria Silkyza Galvez',
     userID: 'cdb22890-fb57-4ec7-b4b7-829716c85a17',
     avatar: 'assets/images/tutor3.jpg',
@@ -94,5 +98,7 @@ class TutorData {
     languages: 'English,Tagalog',
     rating: 5.00,
     isFavorite: 1,
+    country: 'Philippines',
+    isTeacher: 1,
   );
 }

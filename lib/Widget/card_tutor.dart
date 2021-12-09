@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:lettutorapp/Widget/tag.dart';
 import 'package:lettutorapp/modles/tutor.dart';
-import 'package:lettutorapp/router.dart';
+// import 'package:lettutorapp/router.dart';
 
 // ignore: must_be_immutable
 class CardTutor extends StatelessWidget {
   final Tutor tutor;
   int index;
-  CardTutor(this.index, this.tutor, {Key? key}) : super(key: key);
+  final GestureTapCallback? ontap;
+  CardTutor(
+      {Key? key, required this.index, required this.tutor, required this.ontap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +24,10 @@ class CardTutor extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         child: InkWell(
-          onTap: () {
-            Navigator.of(context).pushNamed(Routers.TeacherDetail);
-          },
+          onTap: ontap,
+          // onTap: () {
+          //   Navigator.of(context).pushNamed(Routers.TeacherDetail);
+          // },
           child: Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 20),
               child: Column(
