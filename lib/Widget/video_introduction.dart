@@ -1,6 +1,7 @@
 // @dart=2.9
 
 import 'package:flutter/material.dart';
+import 'package:lettutorapp/Widget/video.dart';
 import 'tagline.dart';
 
 class VideoIntroduction extends StatefulWidget {
@@ -87,15 +88,13 @@ class _VideoIntroductionState extends State<VideoIntroduction> {
               ),
             ),
             Container(
-              height: 300,
-              width: double.infinity,
-              padding: const EdgeInsets.only(top: 20),
-              child: const Image(
-                image: AssetImage(
-                  'assets/images/image.png',
-                ),
-              ),
-            ),
+                height: 300,
+                width: double.infinity,
+                padding: const EdgeInsets.only(top: 20),
+                child: const VideoPlayerScreen(
+                  urlVideo:
+                      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+                )),
           ],
         ),
       ),
