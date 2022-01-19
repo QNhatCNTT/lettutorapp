@@ -23,6 +23,9 @@ class NoLesson extends StatelessWidget {
               color: Colors.white,
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).popAndPushNamed(Routers.Tutors);

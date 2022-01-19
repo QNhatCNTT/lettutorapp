@@ -2,10 +2,12 @@ import 'package:lettutorapp/modles/tutor.dart';
 
 class TutorData {
   static final tutorData1 = Tutor(
-    id: '1',
+    id: 'tutor1',
     name: 'April Corpuz',
-    userID: 'cd0a440b-cd19-4c55-a2a2-612707b1c12c',
+    userID: 'user1',
     avatar: 'assets/images/tutor1.jpg',
+    video:
+        'https://api.app.lettutor.com/video/4d54d3d7-d2a9-42e5-97a2-5ed38af5789avideo1627913015871.mp4',
     bio:
         'Hello there! I am an Industrial Engineer in the profession but chose to do online teaching '
         'because I love to meet different learners. '
@@ -37,10 +39,12 @@ class TutorData {
     isTeacher: 1,
   );
   static final tutorData2 = Tutor(
-    id: '2',
+    id: 'tutor2',
     name: 'Kathy Huỳnh',
-    userID: '7a1067cc-4a79-494d-820c-34e63cf60748',
+    userID: 'user2',
     avatar: 'assets/images/tutor2.jpg',
+    video:
+        'https://api.app.lettutor.com/video/4d54d3d7-d2a9-42e5-97a2-5ed38af5789avideo1627913015871.mp4',
     bio: 'Hi! My name is Kathy, '
         'I have been using English as a second language since I was young, '
         'I also have great experience in teaching and communicating with students. '
@@ -72,10 +76,12 @@ class TutorData {
     isTeacher: 1,
   );
   static final tutorData3 = Tutor(
-    id: '3',
+    id: 'tutor3',
     name: 'Maria Silkyza Galvez',
-    userID: 'cdb22890-fb57-4ec7-b4b7-829716c85a17',
+    userID: 'user3',
     avatar: 'assets/images/tutor3.jpg',
+    video:
+        'https://api.app.lettutor.com/video/4d54d3d7-d2a9-42e5-97a2-5ed38af5789avideo1627913015871.mp4',
     bio:
         'Hello thank you for visiting my profile I am Silkyza, 26 years old from Philippines. '
         'I am a Licensed Professional Teacher with TEFL certificate. '

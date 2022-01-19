@@ -4,6 +4,7 @@ import 'package:lettutorapp/Widget/feedback.dart';
 import 'package:lettutorapp/Widget/info_courses.dart';
 import 'package:lettutorapp/Widget/info_teacher.dart';
 import 'package:lettutorapp/Widget/intro_teacher.dart';
+import 'package:lettutorapp/Widget/video.dart';
 import 'package:lettutorapp/modles/tutor.dart';
 
 class TeacherPage extends StatefulWidget {
@@ -61,7 +62,9 @@ class _TeacherScreenState extends State<TeacherScreen> {
                     padding: const EdgeInsets.all(0),
                     width: double.infinity,
                     height: 200,
-                    child: Image(image: AssetImage(widget.tutor.avatar))),
+                    child: VideoPlayerScreen(
+                      urlVideo: widget.tutor.video,
+                    )),
                 Positioned.fill(
                     child: Align(
                   alignment: Alignment.topLeft,

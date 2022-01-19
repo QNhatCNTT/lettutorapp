@@ -23,6 +23,13 @@ class PickDate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> _date = [];
+    for (int i = 0; i < 5; i++) {
+      var b = DateTime(
+          DateTime.now().year, DateTime.now().month, DateTime.now().day + i);
+      String c = '${b.year}-${b.month}-${b.day}';
+      _date.add(c.toString());
+    }
     return Container(
       height: double.infinity,
       child: Column(
@@ -39,75 +46,96 @@ class PickDate extends StatelessWidget {
           ),
           const Divider(thickness: 1, height: 1),
           Expanded(
-            child: ListView(
+            child: ListView.separated(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              children: <Widget>[
-                Padding(
+              separatorBuilder: (BuildContext context, int index) =>
+                  const SizedBox(
+                height: 10,
+              ),
+              itemCount: _date.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: CustomButton(
-                    onPressed: () {
-                      _showTimeSheet(context);
-                    },
-                    title: '2021-11-29',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: CustomButton(
-                    onPressed: () {
-                      _showTimeSheet(context);
-                    },
-                    title: '2021-11-30',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: CustomButton(
-                    onPressed: () {
-                      _showTimeSheet(context);
-                    },
-                    title: '2021-12-01',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: CustomButton(
-                    onPressed: () {
-                      _showTimeSheet(context);
-                    },
-                    title: '2021-12-02',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: CustomButton(
-                    onPressed: () {
-                      _showTimeSheet(context);
-                    },
-                    title: '2021-12-03',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: CustomButton(
-                    onPressed: () {
-                      _showTimeSheet(context);
-                    },
-                    title: '2021-12-04',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: CustomButton(
-                    onPressed: () {
-                      _showTimeSheet(context);
-                    },
-                    title: '2021-12-05',
-                  ),
-                ),
-              ],
+                      onPressed: () {
+                        _showTimeSheet(context);
+                        print(_date[index]);
+                      },
+                      title: _date[index]),
+                );
+              },
             ),
           ),
+          // Expanded(
+          //   child: ListView(
+          //     padding: const EdgeInsets.symmetric(horizontal: 10),
+          //     children: <Widget>[
+          //       Padding(
+          //         padding: const EdgeInsets.symmetric(vertical: 10),
+          //         child: CustomButton(
+          //           onPressed: () {
+          //             _showTimeSheet(context);
+          //           },
+          //           title: '2021-11-29',
+          //         ),
+          //       ),
+          //       Padding(
+          //         padding: const EdgeInsets.symmetric(vertical: 10),
+          //         child: CustomButton(
+          //           onPressed: () {
+          //             _showTimeSheet(context);
+          //           },
+          //           title: '2021-11-30',
+          //         ),
+          //       ),
+          //       Padding(
+          //         padding: const EdgeInsets.symmetric(vertical: 10),
+          //         child: CustomButton(
+          //           onPressed: () {
+          //             _showTimeSheet(context);
+          //           },
+          //           title: '2021-12-01',
+          //         ),
+          //       ),
+          //       Padding(
+          //         padding: const EdgeInsets.symmetric(vertical: 10),
+          //         child: CustomButton(
+          //           onPressed: () {
+          //             _showTimeSheet(context);
+          //           },
+          //           title: '2021-12-02',
+          //         ),
+          //       ),
+          //       Padding(
+          //         padding: const EdgeInsets.symmetric(vertical: 10),
+          //         child: CustomButton(
+          //           onPressed: () {
+          //             _showTimeSheet(context);
+          //           },
+          //           title: '2021-12-03',
+          //         ),
+          //       ),
+          //       Padding(
+          //         padding: const EdgeInsets.symmetric(vertical: 10),
+          //         child: CustomButton(
+          //           onPressed: () {
+          //             _showTimeSheet(context);
+          //           },
+          //           title: '2021-12-04',
+          //         ),
+          //       ),
+          //       Padding(
+          //         padding: const EdgeInsets.symmetric(vertical: 10),
+          //         child: CustomButton(
+          //           onPressed: () {
+          //             _showTimeSheet(context);
+          //           },
+          //           title: '2021-12-05',
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           const SizedBox(height: 20),
         ],
       ),
