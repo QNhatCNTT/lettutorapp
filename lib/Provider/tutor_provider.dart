@@ -7,6 +7,8 @@ class TutorProvider with ChangeNotifier {
     TutorData.tutorData1,
     TutorData.tutorData2,
     TutorData.tutorData3,
+    TutorData.tutorData4,
+    TutorData.tutorData5,
   ];
   String keyword = '';
   void changeSearch(String value) {
@@ -20,23 +22,26 @@ class TutorProvider with ChangeNotifier {
   }
 
   List<Tutor> get getTutor {
-    if (keyword.isEmpty) {
-      return _tutors;
-    } else {
-      return _tutors
-          .where((tutor) =>
-              tutor.name.toLowerCase().contains(keyword.toLowerCase()))
-          .toList();
-    }
+    sortRatingTutor();
+    // if (keyword.isEmpty) {
+    //   return _tutors;
+    // } else {
+    //   return _tutors
+    //       .where((tutor) =>
+    //           tutor.name.toLowerCase().contains(keyword.toLowerCase()))
+    //       .toList();
+    // }
+    return _tutors;
   }
 
   String selectedTag = 'All';
 
   List<Tutor> get listFavoriteTutor {
-    sortFavoriteTutor();
     if (keyword.isEmpty && selectedTag == 'All') {
+      sortFavoriteTutor();
       return _tutors;
     } else if (keyword.isNotEmpty) {
+      sortFavoriteTutor();
       return _tutors
           .where((tutor) =>
               tutor.name.toLowerCase().contains(keyword.toLowerCase()))
@@ -55,5 +60,9 @@ class TutorProvider with ChangeNotifier {
   void sortFavoriteTutor() {
     _tutors
         .sort((Tutor t1, Tutor t2) => t2.isFavorite.compareTo(t1.isFavorite));
+  }
+
+  void sortRatingTutor() {
+    _tutors.sort((Tutor t1, Tutor t2) => t2.rating.compareTo(t1.rating));
   }
 }

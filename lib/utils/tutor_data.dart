@@ -77,7 +77,7 @@ class TutorData {
   );
   static final tutorData3 = Tutor(
     id: 'tutor3',
-    name: 'Maria Silkyza Galvez',
+    name: 'Maria Silkyza Galvez 1',
     userID: 'user3',
     avatar: 'assets/images/tutor3.jpg',
     video:
@@ -103,6 +103,70 @@ class TutorData {
         'English for kids,English for Business,Conversational,STARTERS,MOVERS',
     languages: 'English,Tagalog',
     rating: 5.00,
+    isFavorite: 1,
+    country: 'Philippines',
+    isTeacher: 1,
+  );
+  static final tutorData4 = Tutor(
+    id: 'tutor3',
+    name: 'Maria Silkyza Galvez 2',
+    userID: 'user3',
+    avatar: 'assets/images/tutor3.jpg',
+    video:
+        'https://api.app.lettutor.com/video/4d54d3d7-d2a9-42e5-97a2-5ed38af5789avideo1627913015871.mp4',
+    bio:
+        'Hello thank you for visiting my profile I am Silkyza, 26 years old from Philippines. '
+        'I am a Licensed Professional Teacher with TEFL certificate. '
+        'I am teaching English, Tagalog and Cebuano.'
+        '\n\nI am can teach students in different levels from A0- B1. '
+        'I can also handle students in all ages from kids to adults.'
+        '\n\nI already have experience in online teaching. '
+        'if you have difficulties in your English speaking, '
+        'reading and writing skills from now on you don\'t have to worry about it '
+        'because I am here to help you to improve those skills',
+    education:
+        'Bachelor of Science in Agriculture and Cutinuing Professional Education',
+    experience:
+        'I have experience in online teaching, I teach student\'s in different levels from kids to adult.',
+    profession: 'Online English Teacher',
+    interests:
+        'I am music enthusiast, my hobbies are playing guitar, singing and dancing.',
+    specialties:
+        'English for kids,English for Business,Conversational,STARTERS,MOVERS',
+    languages: 'English,Tagalog',
+    rating: 4.25,
+    isFavorite: 0,
+    country: 'Philippines',
+    isTeacher: 1,
+  );
+  static final tutorData5 = Tutor(
+    id: 'tutor3',
+    name: 'Maria Silkyza Galvez 3',
+    userID: 'user3',
+    avatar: 'assets/images/tutor3.jpg',
+    video:
+        'https://api.app.lettutor.com/video/4d54d3d7-d2a9-42e5-97a2-5ed38af5789avideo1627913015871.mp4',
+    bio:
+        'Hello thank you for visiting my profile I am Silkyza, 26 years old from Philippines. '
+        'I am a Licensed Professional Teacher with TEFL certificate. '
+        'I am teaching English, Tagalog and Cebuano.'
+        '\n\nI am can teach students in different levels from A0- B1. '
+        'I can also handle students in all ages from kids to adults.'
+        '\n\nI already have experience in online teaching. '
+        'if you have difficulties in your English speaking, '
+        'reading and writing skills from now on you don\'t have to worry about it '
+        'because I am here to help you to improve those skills',
+    education:
+        'Bachelor of Science in Agriculture and Cutinuing Professional Education',
+    experience:
+        'I have experience in online teaching, I teach student\'s in different levels from kids to adult.',
+    profession: 'Online English Teacher',
+    interests:
+        'I am music enthusiast, my hobbies are playing guitar, singing and dancing.',
+    specialties:
+        'English for kids,English for Business,Conversational,STARTERS,MOVERS',
+    languages: 'English,Tagalog',
+    rating: 4.50,
     isFavorite: 1,
     country: 'Philippines',
     isTeacher: 1,
