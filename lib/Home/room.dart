@@ -28,7 +28,7 @@ class EnterRoom extends StatefulWidget {
 
 class _EnterRoomState extends State<EnterRoom> {
   Timer? t;
-  DateTime startTime = DateTime(2021, 12, 5, 12);
+  DateTime startTime = DateTime(2022, 1, 31, 6);
   Duration remaining = DateTime.now().difference(DateTime.now());
   int hours = 0, minutes = 0, seconds = 0;
 

@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> booking = [];
+    final List<String> booking = ['yes'];
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(

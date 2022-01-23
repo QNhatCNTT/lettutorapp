@@ -38,7 +38,7 @@ class LessonIntro extends StatelessWidget {
             height: 15,
           ),
           const Text(
-            'Wed, 06 Oct 21 06:30 - 06:55',
+            'Wed, 31 Jan 22 06:30 - 06:55',
             style: TextStyle(
               fontSize: 16,
               color: Colors.white,
